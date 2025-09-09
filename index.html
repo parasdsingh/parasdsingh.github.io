@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parasdeep Singh - DevOps Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --red: #CC0000;
+            --black: #000000;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F5;
+            --gray: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--white);
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 4rem 0 3rem;
+            text-align: center;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--red);
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--gray);
+        }
+
+        .contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .contact a {
+            color: var(--gray);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            color: var(--red);
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--red);
+            margin-bottom: 2rem;
+        }
+
+        .summary p {
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-list {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--red);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background-color: var(--red);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            transform: translateX(-5px);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .company {
+            color: var(--red);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        .job-description {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .achievements {
+            list-style: none;
+        }
+
+        .achievements li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+        }
+
+        .achievements li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--red);
+        }
+
+        .recommendation {
+            background-color: var(--gray-light);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--red);
+        }
+
+        .recommendation-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+
+        .recommender {
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .recommender-title {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .interests-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .interest-item {
+            background-color: var(--gray-light);
+            padding: 0.5rem 1rem;
+            border-radius: 2px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .contact {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .job-header {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .date {
+                white-space: normal;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                font-size: 12px;
+            }
+            
+            .container {
+                max-width: none;
+                padding: 0;
+            }
+            
+            section {
+                padding: 1.5rem 0;
+                break-inside: avoid;
+            }
+            
+            .timeline-item {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="name">Parasdeep Singh</h1>
+            <p class="title">DevOps Engineer</p>
+            <div class="contact">
+                <span>Auckland, New Zealand</span>
+                <span>021-027-09395</span>
+                <a href="mailto:parasdeep29@gmail.com">parasdeep29@gmail.com</a>
+                <a href="https://linkedin.com/in/parasdsingh">linkedin.com/in/parasdsingh</a>
+            </div>
+        </header>
+
+        <section class="summary">
+            <h2>Summary</h2>
+            <p>A DevSecOps terraformer who has fallen in love with life, it's storms and rainbows alike.</p>
+            <p>I've spent considerable years evangelizing the DevSecOps culture in different teams and tribes. Learning to give the right medicine to each; and make the shift from anxiety to agility, from chaos to clarity.</p>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Fluent in:</h3>
+                    <div class="skill-list">
+                        Python, C#, Java, SQL, Groovy, Javascript, *shell, and all the different markup languages
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Platforms I've worked with:</h3>
+                    <div class="skill-list">
+                        AWS, Kubernetes, Docker, Akamai, Jenkins, Concourse, New Relic, ELK, PagerDuty, Terraform, Vagrant, JMeter, Java Spring, Selenium, Kali, Git, Subversion and many more...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Senior DevOps Engineer</div>
+                            <div class="company">Aotal Ltd.</div>
+                        </div>
+                        <div class="date">Aug 2021 - Present</div>
+                    </div>
+                    <div class="job-description">
+                        Holding the reigns of DevOps & Infrastructure in production, while providing a nourishing and dependable atmosphere for all technical and non-technical teams.
+                    </div>
+                    <ul class="achievements">
+                        <li>Design and construct the future infrastructure of Aotal, in collaboration with internal stakeholders</li>
+                        <li>Manage the complete lifecycle of Aotal's Helm - Kubernetes - Terraform - AWS backend single-handedly</li>
+                        <li>Maintain and upgrade Aotal's legacy infrastructure running on ECS</li>
+                        <li>Work fully remotely with the development and operations teams in New Zealand</li>
+                        <li>Provide 24/7 on-call support for Aotal's critical systems serving clients across New Zealand, Australia and the USA</li>
+                        <li>Mentor the Auckland based operations team with DevOps best practices and guide them through legacy migrations</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">DevOps Engineer</div>
+                            <div class="company">Stuff</div>
+                        </div>
+                        <div class="date">Sep 2019 - Aug 2021</div>
+                    </div>
+                    <div class="job-description">
+                        Leading operational DevOps and rapport with four contrasting teams in Stuff's Auckland office solo.
+                    </div>
+                    <ul class="achievements">
+                        <li>Ensure the highly available stuff.co.nz website serving over two million customers every day remains available and pristine</li>
+                        <li>Work remotely with the wider DevOps team, while working closely with developers in the Auckland office</li>
+                        <li>Build and maintain Stuff's critical legacy infrastructure in AWS using Docker, Puppet and Concourse</li>
+                        <li>Build and maintain Stuff's new infrastructure in GCP using Kubernetes, Jenkins and Terraform</li>
+                        <li>Configure and maintain a highly sophisticated CDN network using Akamai and Varnish caching</li>
+                        <li>Provide on-call support utilizing a NewRelic and ELK based monitoring stack over PagerDuty</li>
+                        <li>Work closely with and enable the New Product Development team in their trailblazing engineering journey</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">DevOps Engineer</div>
+                            <div class="company">Gentrack Ltd. (Global)</div>
+                        </div>
+                        <div class="date">July 2018 - Sep 2019</div>
+                    </div>
+                    <div class="job-description">
+                        Spreading DevOps as a culture in the company and be the key drivers of automation and security in the rapidly growing enterprise.
+                    </div>
+                    <ul class="achievements">
+                        <li>Break down locally-hosted monolithic programs into cloud-hosted micro-services with deployment automation using Terraform and best security practices</li>
+                        <li>Build a chief SaaS application to provision multiple CI pipelines for a product using Jenkins Job DSL, AWS Boto3 and Terraform</li>
+                        <li>Guide and assist product teams into their journey of adopting DevOps as a culture</li>
+                        <li>Mentor and lead interns over 3 months, in producing a proof-of-concept SaaS application</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Software Engineer</div>
+                            <div class="company">Gentrack Ltd. (Global)</div>
+                        </div>
+                        <div class="date">July 2017 - July 2018</div>
+                    </div>
+                    <div class="job-description">
+                        Building an enterprise-level Billing and CRM solution as part of an Agile cross-functional team for the Australian and Singapore electricity market.
+                    </div>
+                    <ul class="achievements">
+                        <li>Successfully deliver an enterprise market-ready solution in the Australian and Singapore electricity market in due time as part of a cross-functional team</li>
+                        <li>Work with an In-house legacy programming language inspired by IBM's UNIBASIC and UNI-data</li>
+                        <li>Develop an enterprise-level Java Spring Hibernate project that follows BDD for Billing and CRM</li>
+                        <li>Implement an SFTP interface in conjunction with existing Windows Component Services written in C#</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">DevOps Engineer</div>
+                            <div class="company">Gentrack Ltd. (Global)</div>
+                        </div>
+                        <div class="date">Dec 2016 - July 2017</div>
+                    </div>
+                    <div class="job-description">
+                        Building an automated deployment and testing pipeline from scratch for a legacy enterprise-level Billing and CRM solution, and a Selenium testing framework.
+                    </div>
+                    <ul class="achievements">
+                        <li>Successfully build a CI pipeline using Python, AWS and Jenkins which serves as the primary benchmarking tool for all builds released into production</li>
+                        <li>Create a test harness extension to the CI pipeline for customizing automated performance tests written for JMeter</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Bachelor's in Information and Communications Technology</div>
+                            <div class="company">Manukau Institute of Technology, Auckland</div>
+                        </div>
+                        <div class="date">2014 - 2017</div>
+                    </div>
+                    <div class="job-description">
+                        The Level 7 program had Software Development as my major stream.
+                    </div>
+                    <ul class="achievements">
+                        <li>Awarded The 2017 Runner-Up Dean's Prize at the Faculty of Business and IT, MIT for industry project with Gentrack</li>
+                        <li>Attained grade A+ in 11 out of 27 papers and a persistent A in the rest</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Senior High School Year 12</div>
+                            <div class="company">Government Model Sr. Secondary School 35-D, Chandigarh</div>
+                        </div>
+                        <div class="date">2010 - 2012</div>
+                    </div>
+                    <div class="job-description">
+                        Graduated with distinction in the Indian Central Board of Secondary Education. My majors were Physics, Chemistry and Mathematics. Minors being Computer Science and English.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recommendations">
+            <h2>Recommendations</h2>
+            <div class="recommendation">
+                <div class="recommendation-text">
+                    "Paras is a bright and enormously talented addition to any team. His calm and pleasant influence along with a willingness to help others was apparent during the time I worked with him on Stuff's product team. Paras has the ability to both focus on the details as well as maintain a high-level perspective of issues that can arise from certain technical choices. He is highly proficient in DevOps and has a knack for being able to translate complex technical issues into lay terms for non-technical stakeholders."
+                </div>
+                <div class="recommender">Dr. Sumedh Kanade</div>
+                <div class="recommender-title">Senior Frontend Developer at Stuff</div>
+            </div>
+
+            <div class="recommendation">
+                <div class="recommendation-text">
+                    "I met Paras on the day he came in with a group of students from MIT to apply for one of our summer internship roles. He started as one of two interns in Product Development who worked together to build the 1st iteration of Gentrack's Cloud CI/CD pipeline in AWS. Paras stayed at Gentrack post university and progressed from Graduate Engineer to an Intermediate level role before pursuing new adventures at Stuff. He was always eager to learn new technologies (especially in the DevOps context) and is confident and able to share his opinions and views in a technical discussion."
+                </div>
+                <div class="recommender">Jan Behrens</div>
+                <div class="recommender-title">CTO at Gentrack</div>
+            </div>
+        </section>
+
+        <section class="interests">
+            <h2>Interests</h2>
+            <div class="interests-list">
+                <div class="interest-item">Exploring Wildlife</div>
+                <div class="interest-item">Listening to classical music</div>
+                <div class="interest-item">Learning foreign languages - Japanese, Chinese, German, Afrikaans</div>
+                <div class="interest-item">Exploring Art</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

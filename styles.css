@@ -138,49 +138,6 @@ body {
     display: none;
 }
 
-.skyline-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 0.8;
-    z-index: 1;
-}
-
-.auckland-skyline {
-    width: 100%;
-    height: auto;
-    filter: brightness(0) invert(1);
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-    opacity: 0.8;
-}
-
-.auckland-skyline:hover {
-    opacity: 1;
-}
-
-.location-tooltip {
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--accent-primary);
-    font-family: 'Source Code Pro', monospace;
-    font-size: 0.65rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    white-space: nowrap;
-}
-
-.skyline-container:hover .location-tooltip {
-    opacity: 1;
-}
 
 .left-nav {
     margin-top: 0;
@@ -668,16 +625,6 @@ h2 {
         margin-top: 2rem;
     }
     
-    .skyline-container {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        right: auto;
-        margin: 2rem 0 0;
-        max-width: 100%;
-        overflow: hidden;
-        opacity: 0.5;
-    }
 
     .section-header {
         position: sticky;
@@ -717,19 +664,6 @@ h2 {
         margin-bottom: 2rem;
     }
 
-    
-    .auckland-skyline {
-        width: 100%;
-        height: auto;
-    }
-    
-    .location-tooltip {
-        position: static;
-        opacity: 1;
-        transform: none;
-        margin-top: 1rem;
-        text-align: center;
-    }
 
 
     .timeline-item:hover,

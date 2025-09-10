@@ -239,6 +239,13 @@ body {
     margin-bottom: 0;
 }
 
+.terminal-section::after {
+    content: '';
+    display: block;
+    height: 3rem;
+    width: 100%;
+}
+
 .terminal-section:last-child {
     margin-bottom: 6rem;
 }
@@ -658,6 +665,7 @@ h2 {
     .right-pane {
         width: 100%;
         margin-left: 0;
+        max-width: 100vw;
     }
 
     .terminal-window {
@@ -778,25 +786,25 @@ h2 {
         padding: 1rem 1rem 8rem;
     }
 
-    .summary-card {
-        margin-left: 0;
+    .section-header {
+        position: sticky;
+        top: 0;
+        background: var(--bg-primary);
+        z-index: 100;
+        padding: 1rem 0;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
     }
-    
-    .ls-output {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    
-    .timeline {
-        margin-left: 0;
-    }
-    
-    .recommendation {
-        margin-left: 0;
-    }
-    
-    .todo-card {
-        margin-left: 0;
+
+    .section-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -1rem;
+        right: -1rem;
+        bottom: 0;
+        background: var(--bg-primary);
+        z-index: -1;
     }
 
     .item-header {

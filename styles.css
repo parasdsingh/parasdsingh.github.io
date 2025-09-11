@@ -10,6 +10,27 @@
     --border: #333333;
 }
 
+/* Light theme - apply to body and all elements */
+.theme-toggle-input:not(:checked) ~ .app-layout {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F5F5F5;
+    --text-primary: #000000;
+    --text-secondary: #666666;
+    --accent-primary: #20B2AA;
+    --accent-secondary: #55C5BD;
+    --accent-tertiary: #66B8B0;
+    --accent-quaternary: #559999;
+    --border: #CCCCCC;
+}
+
+.theme-toggle-input:not(:checked) ~ .app-layout * {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F5F5F5;
+    --text-primary: #000000;
+    --text-secondary: #666666;
+    --border: #CCCCCC;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -139,6 +160,76 @@ body {
 .contact-link svg {
     width: 18px;
     height: 18px;
+}
+
+/* Terminal Theme Toggle */
+.theme-toggle-input {
+    display: none;
+}
+
+.theme-toggle-label {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark mode button (default - checkbox checked) */
+.theme-toggle-input:checked + .theme-toggle-label {
+    background: #111111;
+    color: #AAAAAA;
+    border: 1px solid #333333;
+}
+
+/* Light mode button (checkbox unchecked) */
+.theme-toggle-input:not(:checked) + .theme-toggle-label {
+    background: #F5F5F5;
+    color: #666666;
+    border: 1px solid #CCCCCC;
+}
+
+.theme-toggle-label:hover {
+    background: var(--accent-primary) !important;
+    color: var(--bg-primary) !important;
+    border-color: var(--accent-primary) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+}
+
+.theme-toggle-label:hover .theme-icon {
+    color: var(--bg-primary) !important;
+}
+
+/* Theme icons */
+.theme-icon {
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* Icon display logic only - let base styles handle colors */
+.theme-toggle-input:checked + .theme-toggle-label .theme-icon-dark {
+    display: block;
+}
+
+.theme-toggle-input:checked + .theme-toggle-label .theme-icon-light {
+    display: none;
+}
+
+.theme-toggle-input:not(:checked) + .theme-toggle-label .theme-icon-dark {
+    display: none;
+}
+
+.theme-toggle-input:not(:checked) + .theme-toggle-label .theme-icon-light {
+    display: block;
 }
 
 
@@ -704,6 +795,43 @@ h2 {
         grid-template-columns: 1.5fr 0.3fr 0.8fr 0.8fr 0.8fr 0.8fr 1.5fr;
         gap: 0.3rem;
     }
+    
+    /* Theme toggle positioning for tablet - increased margins */
+    .theme-toggle-label {
+        top: 1.75rem;
+        right: 1.75rem;
+        width: 36px;
+        height: 36px;
+    }
+    
+    /* Tablet button states */
+    .theme-toggle-input:checked + .theme-toggle-label {
+        background: #111111;
+        color: #AAAAAA;
+        border: 1px solid #333333;
+    }
+    
+    .theme-toggle-input:not(:checked) + .theme-toggle-label {
+        background: #F5F5F5;
+        color: #666666;
+        border: 1px solid #CCCCCC;
+    }
+    
+    .theme-toggle-label:hover {
+        background: var(--accent-primary) !important;
+        color: var(--bg-primary) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+    }
+    
+    .theme-toggle-label:hover .theme-icon {
+        color: var(--bg-primary) !important;
+    }
+    
+    .theme-icon {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -803,7 +931,47 @@ h2 {
         margin-left: 0rem;    /* 1.5rem - 1.5rem padding */
         margin-right: 0rem;
     }
-
+    
+    /* Theme toggle positioning for mobile - bottom right FAB position, increased margins */
+    .theme-toggle-label {
+        top: auto;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 56px;
+        height: 56px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Mobile button states */
+    .theme-toggle-input:checked + .theme-toggle-label {
+        background: #111111;
+        color: #AAAAAA;
+        border: 1px solid #333333;
+    }
+    
+    .theme-toggle-input:not(:checked) + .theme-toggle-label {
+        background: #F5F5F5;
+        color: #666666;
+        border: 1px solid #CCCCCC;
+    }
+    
+    /* Mobile tap feedback - brief flash only */
+    .theme-toggle-label:active {
+        background: #20B2AA !important;
+        color: #FFFFFF !important;
+        transform: scale(0.95);
+        box-shadow: 0 2px 8px rgba(32, 178, 170, 0.3);
+        transition: none;
+    }
+    
+    .theme-toggle-label:active .theme-icon {
+        color: #FFFFFF !important;
+    }
+    
+    .theme-icon {
+        width: 24px;
+        height: 24px;
+    }
 
 }
 
@@ -815,6 +983,11 @@ h2 {
 }
 
 @media print {
+    /* Hide theme toggle in print */
+    .theme-toggle-input,
+    .theme-toggle-label {
+        display: none !important;
+    }
     /* A4 Page Setup */
     @page {
         size: A4;

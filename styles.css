@@ -268,7 +268,7 @@ h2 {
     background: transparent;
     padding: 0;
     max-width: 100%;
-    margin: 0 0 0 2rem;
+    margin: 0 2rem 0 2rem;
     text-align: left;
     position: relative;
 }
@@ -372,7 +372,7 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    margin-left: 2rem;
+    margin: 0 2rem;
 }
 
 .timeline-item {
@@ -481,8 +481,7 @@ h2 {
 .recommendation {
     background-color: transparent;
     padding: 1.5rem;
-    margin-bottom: 2.5rem;
-    margin-left: 2rem;
+    margin: 0 2rem 2.5rem 2rem;
     border-radius: 0px;
     transition: all 0.2s ease;
     border: 1px solid transparent;
@@ -698,7 +697,7 @@ h2 {
     
     .ls-output {
         font-size: 0.7rem;
-        margin-left: 1rem;
+        margin: 0 1rem;
     }
 
     .ls-item {
@@ -785,6 +784,24 @@ h2 {
 
     .date-range {
         white-space: normal;
+    }
+
+    /* Consistent left/right margins for all content sections */
+    .summary-card,
+    .ls-output {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+    
+    /* Adjust margins for padded elements to align visually */
+    .timeline {
+        margin-left: 0.5rem;  /* 1.5rem - 1rem padding */
+        margin-right: 0.5rem;
+    }
+    
+    .recommendation {
+        margin-left: 0rem;    /* 1.5rem - 1.5rem padding */
+        margin-right: 0rem;
     }
 
 
@@ -1060,10 +1077,11 @@ h2 {
     /* Recommendations */
     .recommendation {
         margin: 0 0 16pt 0;
-        padding: 0;
+        padding: 6pt 8pt;
         page-break-inside: avoid;
-        border: none;
-        background: transparent;
+        border: 0.5pt solid var(--print-accent) !important;
+        border-radius: 2pt;
+        background: white !important;
     }
     
     .recommendation-text {

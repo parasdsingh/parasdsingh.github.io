@@ -85,12 +85,112 @@ body {
 .terminal-window {
     margin: 0;
     background: transparent;
+    position: relative;
 }
 
 
 .terminal-content {
     padding: 2rem 2rem 2rem;
     padding-top: 10rem; /* Align section header with subtitle baseline */
+}
+
+/* Desktop: Account for iTerm top bar and bottom border */
+@media (min-width: 1025px) {
+    .terminal-content {
+        padding-top: 13.8rem; /* 10rem baseline + 1rem gap + 2.8rem iTerm bar */
+        padding-bottom: 2rem; /* Reduced since footer is now outside */
+    }
+    
+    /* Position footer outside iTerm frame */
+    .site-footer {
+        position: fixed;
+        bottom: 2rem;
+        left: 50%;
+        right: 2rem; /* Add right margin matching design system */
+        background: transparent; /* Remove black background */
+        z-index: 10;
+        padding: 1rem 2rem 1rem 0; /* Remove left padding since it starts at 50%, add right padding */
+    }
+    
+    /* Clip content to stay within iTerm frame */
+    .right-pane {
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .terminal-window {
+        position: fixed;
+        top: 8rem; /* iTerm content area starts below smaller title bar (6rem + 2rem) */
+        left: 50%;
+        right: 0;
+        bottom: 9rem; /* Move higher to avoid footer collision */
+        overflow: hidden;
+        padding: 0; /* Remove all padding */
+        margin: 0;
+        background: transparent;
+    }
+    
+    .terminal-content {
+        height: 100%;
+        overflow-y: auto;
+        padding-top: 0; /* No top padding - headers stick to frame top */
+        padding-bottom: 0; /* No bottom padding - content flows to frame bottom */
+        padding-left: 2rem;
+        padding-right: 2rem;
+        position: relative; /* Create positioning context for sticky headers */
+        scroll-behavior: smooth; /* Enable smooth scrolling inside terminal */
+    }
+}
+
+/* iTerm-style terminal frame for desktop */
+@media (min-width: 1025px) {
+    .terminal-window::before {
+        content: '';
+        position: fixed;
+        top: 6rem; /* Theme toggle (2rem) + gap (2rem) + toggle height (2rem) */
+        left: 50%;
+        right: -2rem; /* Extend right border outside viewport */
+        bottom: 9rem; /* Moved higher to clear footer completely */
+        border: 1px solid #555555;
+        pointer-events: none;
+        z-index: 1;
+        border-radius: 8px;
+    }
+    
+    /* iTerm top bar with macOS styling */
+    .terminal-window::after {
+        content: '';
+        position: fixed;
+        top: 6rem;
+        left: 50%;
+        right: -2rem;
+        height: 2rem; /* Reduced from 2.8rem to save space */
+        background: linear-gradient(180deg, #e8e8e8 0%, #d1d1d1 50%, #c4c4c4 100%);
+        border-bottom: 1px solid #aaa;
+        pointer-events: none;
+        z-index: 200; /* Above sticky headers */
+        border-radius: 8px 8px 0 0;
+    }
+    
+    /* macOS traffic light buttons */
+    .right-pane::before {
+        content: '';
+        position: fixed;
+        top: 6.7rem; /* Adjusted for smaller bar height */
+        left: calc(50% + 0.6rem);
+        width: 10px; /* Smaller buttons */
+        height: 10px;
+        background: #ff5f56;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 300; /* Above iTerm bar */
+        box-shadow: 
+            18px 0 0 #ffbd2e, /* Closer spacing */
+            36px 0 0 #27ca3f,
+            0 0 0 0.5px rgba(0,0,0,0.1),
+            18px 0 0 0.5px rgba(0,0,0,0.1),
+            36px 0 0 0.5px rgba(0,0,0,0.1);
+    }
 }
 
 .container {
@@ -344,7 +444,7 @@ body:not(:has(:target)) .nav-heading[href="#about"] {
     position: sticky;
     top: -1px;
     z-index: 100;
-    padding: 1rem 0;
+    padding: 0.5rem 0; /* Reduced from 1rem for thinner background */
     margin-top: -1rem;
 }
 
@@ -359,6 +459,18 @@ body:not(:has(:target)) .nav-heading[href="#about"] {
     z-index: -1;
     pointer-events: none;
     user-select: none;
+}
+
+/* Desktop: Sticky headers stick to iTerm frame top and don't overlap left border */
+@media (min-width: 1025px) {
+    .section-header {
+        top: 0.25rem; /* Tiny gap from terminal window top */
+    }
+    
+    .section-header::before {
+        left: 0; /* Don't extend beyond content area to avoid overlapping iTerm left border */
+        right: -2rem;
+    }
 }
 
 h2 {

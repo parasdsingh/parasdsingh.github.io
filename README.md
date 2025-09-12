@@ -1,15 +1,16 @@
 # Terminal CV
 
 My resume reimagined as a concept I spent most of my time in - terminal :)
+
 I'm not a CSS expert, so credit goes to Claude Code for a lot of the heavy lifting.
 
 ## The Concept
 
-I envisioned a digital resume which is
-- reminiscent of the command line
-- is contextually aware on desktop, mobile, and print
-- has a tiny footprint—pure HTML and CSS
-- no JavaScript
+I envisioned a digital resume which is:
+- Reminiscent of the command line
+- Is contextually aware on desktop, mobile, and print
+- Has a tiny footprint — pure HTML and CSS
+- No JavaScript
 
 ## Usage
 
@@ -30,7 +31,6 @@ To print or save as PDF, use the print button or browser's print function.
 Static site deployable to any web server. Main files:
 - `index.html` - CV content and structure
 - `styles.css` - All styling and responsive behavior
-- `.stylelintrc.json` - StyleLint configuration
 
 ### Code Quality & Validation
 

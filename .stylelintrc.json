@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "block-no-empty": null,
+    "property-no-unknown": [true, {
+      "ignoreProperties": ["scroll-behavior", "scroll-margin-top", "gap"]
+    }],
+    "selector-pseudo-class-no-unknown": [true, {
+      "ignorePseudoClasses": ["has"]
+    }]
+  }
+}

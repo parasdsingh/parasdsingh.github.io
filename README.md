@@ -28,5 +28,28 @@ To print or save as PDF, use the print button or browser's print function.
 Static site deployable to any web server. Main files:
 - `index.html` - CV content and structure
 - `styles.css` - All styling and responsive behavior
+- `.stylelintrc.json` - StyleLint configuration
+
+### Code Quality & Validation
+
+The codebase is validated using standard tools:
+
+```bash
+# HTML validation
+npx htmlhint index.html
+
+# Code formatting
+npx prettier --check index.html styles.css
+npx prettier --write index.html styles.css
+
+# CSS validation
+npx stylelint styles.css
+```
+
+**Validation Status:**
+- HTML: Valid HTML5 with proper semantics (HTMLHint)
+- CSS: CSS3 with custom properties and grid layout (StyleLint) 
+- Formatting: Prettier-formatted for consistency
+- Accessibility: Proper ARIA labels and semantic markup
 
 Built with vanilla web technologies for maximum compatibility and performance.

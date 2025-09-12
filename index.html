@@ -1,452 +1,735 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parasdeep Singh - DevOps Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Source+Code+Pro:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Source+Code+Pro:wght@400;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <!-- Terminal Theme Toggle -->
-    <input type="checkbox" id="dark-mode-toggle" class="theme-toggle-input" checked>
-    <label for="dark-mode-toggle" class="theme-toggle-label" aria-label="Toggle theme">
-        <svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-        <svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
+    <input
+      type="checkbox"
+      id="dark-mode-toggle"
+      class="theme-toggle-input"
+      checked
+    />
+    <label
+      for="dark-mode-toggle"
+      class="theme-toggle-label"
+      aria-label="Toggle theme"
+    >
+      <svg
+        class="theme-icon theme-icon-dark"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+      <svg
+        class="theme-icon theme-icon-light"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
     </label>
-    
+
     <div class="app-layout">
-        <!-- Fixed Left Pane -->
-        <div class="left-pane">
-            <div class="profile-header">
-                <h1 class="title">Parasdeep Singh</h1>
-                <p class="subtitle">DevOps Engineer</p>
-                <div class="print-contact-info">
-                    <div class="print-url">Portfolio: parasdsingh.github.io</div>
-                    <div class="print-url">Location: Auckland, New Zealand</div>
-                    <div class="print-contacts">
-                        <span><strong>GitHub:</strong> github.com/parasdsingh</span><br>
-                        <span><strong>LinkedIn:</strong> linkedin.com/in/parasdsingh</span><br>
-                        <span><strong>Email:</strong> parasdeep29@gmail.com</span><br>
-                        <span><strong>Poetry:</strong> silencecalling.me</span>
-                    </div>
-                </div>
+      <!-- Fixed Left Pane -->
+      <div class="left-pane">
+        <div class="profile-header">
+          <h1 class="title">Parasdeep Singh</h1>
+          <p class="subtitle">DevOps Engineer</p>
+          <div class="print-contact-info">
+            <div class="print-url">Portfolio: parasdsingh.github.io</div>
+            <div class="print-url">Location: Auckland, New Zealand</div>
+            <div class="print-contacts">
+              <span><strong>GitHub:</strong> github.com/parasdsingh</span><br />
+              <span><strong>LinkedIn:</strong> linkedin.com/in/parasdsingh</span
+              ><br />
+              <span><strong>Email:</strong> parasdeep29@gmail.com</span><br />
+              <span><strong>Poetry:</strong> silencecalling.me</span>
             </div>
-            
-            <nav class="left-nav">
-                <div class="nav-section">
-                    <a href="#about" class="nav-heading">About</a>
-                </div>
-                <div class="nav-section">
-                    <a href="#tech-stack" class="nav-heading">Tech Stack</a>
-                </div>
-                <div class="nav-section">
-                    <a href="#experience" class="nav-heading">Experience</a>
-                </div>
-                <div class="nav-section">
-                    <a href="#education" class="nav-heading">Education</a>
-                </div>
-                <div class="nav-section">
-                    <a href="#recommendations" class="nav-heading">Recommendations</a>
-                </div>
-            </nav>
-            
-            <div class="contact-links">
-                <a href="https://github.com/parasdsingh" target="_blank" aria-label="GitHub" class="contact-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/parasdsingh/" target="_blank" aria-label="LinkedIn" class="contact-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                </a>
-                <a href="mailto:parasdeep29@gmail.com" aria-label="Email" class="contact-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                </a>
-                <a href="https://silencecalling.me/" target="_blank" aria-label="Poetry Blog" class="contact-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14,2 14,8 20,8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10,9 9,9 8,9"></polyline>
-                    </svg>
-                </a>
-                <button onclick="window.print()" aria-label="Print/Save as PDF" class="contact-link print-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6,9 6,2 18,2 18,9"></polyline>
-                        <path d="M6,18H4a2,2 0,0,1-2-2V11a2,2 0,0,1,2-2H20a2,2 0,0,1,2,2v5a2,2 0,0,1-2,2H18"></path>
-                        <rect x="6" y="14" width="12" height="8"></rect>
-                    </svg>
-                </button>
-            </div>
-            
-            
+          </div>
         </div>
 
-        <!-- Scrollable Right Pane -->
-        <div class="right-pane">
-            <div class="terminal-window">
-                <div class="terminal-content">
+        <nav class="left-nav">
+          <div class="nav-section">
+            <a href="#about" class="nav-heading">About</a>
+          </div>
+          <div class="nav-section">
+            <a href="#tech-stack" class="nav-heading">Tech Stack</a>
+          </div>
+          <div class="nav-section">
+            <a href="#experience" class="nav-heading">Experience</a>
+          </div>
+          <div class="nav-section">
+            <a href="#education" class="nav-heading">Education</a>
+          </div>
+          <div class="nav-section">
+            <a href="#recommendations" class="nav-heading">Recommendations</a>
+          </div>
+        </nav>
 
-                    <section id="about" class="summary terminal-section">
-                        <div class="section-header">$ whoami</div>
-                        <div class="summary-card">
-                            <p class="summary-tagline">A DevSecOps terraformer who has fallen in love with life, it's storms and rainbows alike.</p>
-                            <p class="summary-description">I've spent considerable years evangelizing the DevSecOps culture in different teams and tribes, learning to give the right medicine to each and making the shift from anxiety to agility, from chaos to clarity.</p>
-                        </div>
-                    </section>
+        <div class="contact-links">
+          <a
+            href="https://github.com/parasdsingh"
+            target="_blank"
+            aria-label="GitHub"
+            class="contact-link"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/parasdsingh/"
+            target="_blank"
+            aria-label="LinkedIn"
+            class="contact-link"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a
+            href="mailto:parasdeep29@gmail.com"
+            aria-label="Email"
+            class="contact-link"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              ></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+          <a
+            href="https://silencecalling.me/"
+            target="_blank"
+            aria-label="Poetry Blog"
+            class="contact-link"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              ></path>
+              <polyline points="14,2 14,8 20,8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10,9 9,9 8,9"></polyline>
+            </svg>
+          </a>
+          <button
+            onclick="window.print()"
+            aria-label="Print/Save as PDF"
+            class="contact-link print-link"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="6,9 6,2 18,2 18,9"></polyline>
+              <path
+                d="M6,18H4a2,2 0,0,1-2-2V11a2,2 0,0,1,2-2H20a2,2 0,0,1,2,2v5a2,2 0,0,1-2,2H18"
+              ></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+          </button>
+        </div>
+      </div>
 
-                    <section id="tech-stack" class="tech-stack terminal-section tech-section">
-                        <div class="section-header">$ ls -l /usr/bin</div>
-                        <div class="ls-output">
-                            <a href="https://terraform.io" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">8.2K</span>
-                                <span class="date">2016</span>
-                                <span class="tool-name">terraform</span>
-                            </a>
-                            <a href="https://kubernetes.io" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">7.8K</span>
-                                <span class="date">2018</span>
-                                <span class="tool-name">kubernetes</span>
-                            </a>
-                            <a href="https://aws.amazon.com" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">6.4K</span>
-                                <span class="date">2017</span>
-                                <span class="tool-name">aws</span>
-                            </a>
-                            <a href="https://python.org" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">5.2K</span>
-                                <span class="date">2017</span>
-                                <span class="tool-name">python</span>
-                            </a>
-                            <a href="https://jenkins.io" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">3.1K</span>
-                                <span class="date">2016</span>
-                                <span class="tool-name">jenkins</span>
-                            </a>
-                            <a href="https://java.com" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">2.8K</span>
-                                <span class="date">2017</span>
-                                <span class="tool-name">java</span>
-                            </a>
-                            <a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">2.4K</span>
-                                <span class="date">2017</span>
-                                <span class="tool-name">csharp</span>
-                            </a>
-                            <a href="https://www.postgresql.org" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">2.1K</span>
-                                <span class="date">2018</span>
-                                <span class="tool-name">postgresql</span>
-                            </a>
-                            <a href="https://groovy-lang.org" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">1.8K</span>
-                                <span class="date">2018</span>
-                                <span class="tool-name">groovy</span>
-                            </a>
-                            <a href="https://www.docker.com" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">4.2K</span>
-                                <span class="date">2018</span>
-                                <span class="tool-name">docker</span>
-                            </a>
-                            <a href="https://concourse-ci.org" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">2.3K</span>
-                                <span class="date">2019</span>
-                                <span class="tool-name">concourse</span>
-                            </a>
-                            <a href="https://newrelic.com" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">1.5K</span>
-                                <span class="date">2019</span>
-                                <span class="tool-name">new-relic</span>
-                            </a>
-                            <a href="https://jmeter.apache.org" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">1.6K</span>
-                                <span class="date">2016</span>
-                                <span class="tool-name">jmeter</span>
-                            </a>
-                            <a href="https://github.com/features/actions" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">1.2K</span>
-                                <span class="date">2021</span>
-                                <span class="tool-name">github-actions</span>
-                            </a>
-                            <a href="https://akamai.com" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">0.8K</span>
-                                <span class="date">2019</span>
-                                <span class="tool-name">akamai</span>
-                            </a>
-                            <a href="https://ollama.com" target="_blank" class="ls-item">
-                                <span class="permissions">-rwxr-xr-x</span>
-                                <span class="links">1</span>
-                                <span class="owner">paras</span>
-                                <span class="group">devops</span>
-                                <span class="size">0.4K</span>
-                                <span class="date">2024</span>
-                                <span class="tool-name">ollama</span>
-                            </a>
-                            <div class="ls-truncated">
-                                ... (output truncated, use 'ls -la' to see all)
-                            </div>
-                        </div>
-                    </section>
+      <!-- Scrollable Right Pane -->
+      <div class="right-pane">
+        <div class="terminal-window">
+          <div class="terminal-content">
+            <section id="about" class="summary terminal-section">
+              <div class="section-header">$ whoami</div>
+              <div class="summary-card">
+                <p class="summary-tagline">
+                  A DevSecOps terraformer who has fallen in love with life, it's
+                  storms and rainbows alike.
+                </p>
+                <p class="summary-description">
+                  I've spent considerable years evangelizing the DevSecOps
+                  culture in different teams and tribes, learning to give the
+                  right medicine to each and making the shift from anxiety to
+                  agility, from chaos to clarity.
+                </p>
+              </div>
+            </section>
 
-                    <section id="experience" class="experience terminal-section experience-section">
-                        <div class="section-header">$ history</div>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="item-header">
-                                    <div class="item-info">
-                                        <div class="job-title">Senior DevOps Engineer</div>
-                                        <div class="company">Aotal Ltd.</div>
-                                    </div>
-                                    <div class="date-range">Aug 2021 — Aug 2025</div>
-                                </div>
-                                <div class="job-description">
-                                    Holding the reigns of DevOps & Infrastructure in production, while providing a nourishing and dependable atmosphere for all technical and non-technical teams.
-                                </div>
-                    <ul class="achievements">
-                        <li>Design and construct the future infrastructure of Aotal, in collaboration with internal stakeholders</li>
-                        <li>Manage the complete lifecycle of Aotal's Helm - Kubernetes - Terraform - AWS backend single-handedly</li>
-                        <li>Maintain and upgrade Aotal's legacy infrastructure running on ECS</li>
-                        <li>Work fully remotely with the development and operations teams in New Zealand</li>
-                        <li>Provide 24/7 on-call support for Aotal's critical systems serving clients across New Zealand, Australia and the USA</li>
-                        <li>Mentor the Auckland based operations team with DevOps best practices and guide them through legacy migrations</li>
-                    </ul>
+            <section
+              id="tech-stack"
+              class="tech-stack terminal-section tech-section"
+            >
+              <div class="section-header">$ ls -l /usr/bin</div>
+              <div class="ls-output">
+                <a href="https://terraform.io" target="_blank" class="ls-item">
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">8.2K</span>
+                  <span class="date">2016</span>
+                  <span class="tool-name">terraform</span>
+                </a>
+                <a href="https://kubernetes.io" target="_blank" class="ls-item">
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">7.8K</span>
+                  <span class="date">2018</span>
+                  <span class="tool-name">kubernetes</span>
+                </a>
+                <a
+                  href="https://aws.amazon.com"
+                  target="_blank"
+                  class="ls-item"
+                >
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">6.4K</span>
+                  <span class="date">2017</span>
+                  <span class="tool-name">aws</span>
+                </a>
+                <a href="https://python.org" target="_blank" class="ls-item">
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">5.2K</span>
+                  <span class="date">2017</span>
+                  <span class="tool-name">python</span>
+                </a>
+                <a href="https://jenkins.io" target="_blank" class="ls-item">
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">3.1K</span>
+                  <span class="date">2016</span>
+                  <span class="tool-name">jenkins</span>
+                </a>
+                <a href="https://java.com" target="_blank" class="ls-item">
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">2.8K</span>
+                  <span class="date">2017</span>
+                  <span class="tool-name">java</span>
+                </a>
+                <a
+                  href="https://docs.microsoft.com/en-us/dotnet/csharp/"
+                  target="_blank"
+                  class="ls-item"
+                >
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">2.4K</span>
+                  <span class="date">2017</span>
+                  <span class="tool-name">csharp</span>
+                </a>
+                <a
+                  href="https://www.postgresql.org"
+                  target="_blank"
+                  class="ls-item"
+                >
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">2.1K</span>
+                  <span class="date">2018</span>
+                  <span class="tool-name">postgresql</span>
+                </a>
+                <a
+                  href="https://groovy-lang.org"
+                  target="_blank"
+                  class="ls-item"
+                >
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">1.8K</span>
+                  <span class="date">2018</span>
+                  <span class="tool-name">groovy</span>
+                </a>
+                <a
+                  href="https://www.docker.com"
+                  target="_blank"
+                  class="ls-item"
+                >
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">4.2K</span>
+                  <span class="date">2018</span>
+                  <span class="tool-name">docker</span>
+                </a>
+                <a
+                  href="https://concourse-ci.org"
+                  target="_blank"
+                  class="ls-item"
+                >
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">2.3K</span>
+                  <span class="date">2019</span>
+                  <span class="tool-name">concourse</span>
+                </a>
+                <a href="https://newrelic.com" target="_blank" class="ls-item">
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">1.5K</span>
+                  <span class="date">2019</span>
+                  <span class="tool-name">new-relic</span>
+                </a>
+                <a
+                  href="https://jmeter.apache.org"
+                  target="_blank"
+                  class="ls-item"
+                >
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">1.6K</span>
+                  <span class="date">2016</span>
+                  <span class="tool-name">jmeter</span>
+                </a>
+                <a
+                  href="https://github.com/features/actions"
+                  target="_blank"
+                  class="ls-item"
+                >
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">1.2K</span>
+                  <span class="date">2021</span>
+                  <span class="tool-name">github-actions</span>
+                </a>
+                <a href="https://akamai.com" target="_blank" class="ls-item">
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">0.8K</span>
+                  <span class="date">2019</span>
+                  <span class="tool-name">akamai</span>
+                </a>
+                <a href="https://ollama.com" target="_blank" class="ls-item">
+                  <span class="permissions">-rwxr-xr-x</span>
+                  <span class="links">1</span>
+                  <span class="owner">paras</span>
+                  <span class="group">devops</span>
+                  <span class="size">0.4K</span>
+                  <span class="date">2024</span>
+                  <span class="tool-name">ollama</span>
+                </a>
+                <div class="ls-truncated">
+                  ... (output truncated, use 'ls -la' to see all)
                 </div>
+              </div>
+            </section>
 
-                            <div class="timeline-item">
-                                <div class="item-header">
-                                    <div class="item-info">
-                                        <div class="job-title">DevOps Engineer</div>
-                                        <div class="company">Stuff</div>
-                                    </div>
-                                    <div class="date-range">Sep 2019 — Aug 2021</div>
-                                </div>
-                    <div class="job-description">
-                        Leading operational DevOps and rapport with four contrasting teams in Stuff's Auckland office solo.
+            <section
+              id="experience"
+              class="experience terminal-section experience-section"
+            >
+              <div class="section-header">$ history</div>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="item-header">
+                    <div class="item-info">
+                      <div class="job-title">Senior DevOps Engineer</div>
+                      <div class="company">Aotal Ltd.</div>
                     </div>
-                    <ul class="achievements">
-                        <li>Ensure the highly available stuff.co.nz website serving over two million customers every day remains available and pristine</li>
-                        <li>Work remotely with the wider DevOps team, while working closely with developers in the Auckland office</li>
-                        <li>Build and maintain Stuff's critical legacy infrastructure in AWS using Docker, Puppet and Concourse</li>
-                        <li>Build and maintain Stuff's new infrastructure in GCP using Kubernetes, Jenkins and Terraform</li>
-                        <li>Configure and maintain a highly sophisticated CDN network using Akamai and Varnish caching</li>
-                        <li>Provide on-call support utilizing a NewRelic and ELK based monitoring stack over PagerDuty</li>
-                        <li>Work closely with and enable the New Product Development team in their trailblazing engineering journey</li>
-                    </ul>
+                    <div class="date-range">Aug 2021 — Aug 2025</div>
+                  </div>
+                  <div class="job-description">
+                    Holding the reigns of DevOps & Infrastructure in production,
+                    while providing a nourishing and dependable atmosphere for
+                    all technical and non-technical teams.
+                  </div>
+                  <ul class="achievements">
+                    <li>
+                      Design and construct the future infrastructure of Aotal,
+                      in collaboration with internal stakeholders
+                    </li>
+                    <li>
+                      Manage the complete lifecycle of Aotal's Helm - Kubernetes
+                      - Terraform - AWS backend single-handedly
+                    </li>
+                    <li>
+                      Maintain and upgrade Aotal's legacy infrastructure running
+                      on ECS
+                    </li>
+                    <li>
+                      Work fully remotely with the development and operations
+                      teams in New Zealand
+                    </li>
+                    <li>
+                      Provide 24/7 on-call support for Aotal's critical systems
+                      serving clients across New Zealand, Australia and the USA
+                    </li>
+                    <li>
+                      Mentor the Auckland based operations team with DevOps best
+                      practices and guide them through legacy migrations
+                    </li>
+                  </ul>
                 </div>
 
-                            <div class="timeline-item">
-                                <div class="item-header">
-                                    <div class="item-info">
-                                        <div class="job-title">DevOps Engineer</div>
-                                        <div class="company">Gentrack Ltd. (Global)</div>
-                                    </div>
-                                    <div class="date-range">Jul 2018 — Sep 2019</div>
-                                </div>
-                    <div class="job-description">
-                        Spreading DevOps as a culture in the company and be the key drivers of automation and security in the rapidly growing enterprise.
+                <div class="timeline-item">
+                  <div class="item-header">
+                    <div class="item-info">
+                      <div class="job-title">DevOps Engineer</div>
+                      <div class="company">Stuff</div>
                     </div>
-                    <ul class="achievements">
-                        <li>Break down locally-hosted monolithic programs into cloud-hosted micro-services with deployment automation using Terraform and best security practices</li>
-                        <li>Build a chief SaaS application to provision multiple CI pipelines for a product using Jenkins Job DSL, AWS Boto3 and Terraform</li>
-                        <li>Guide and assist product teams into their journey of adopting DevOps as a culture</li>
-                        <li>Mentor and lead interns over 3 months, in producing a proof-of-concept SaaS application</li>
-                    </ul>
+                    <div class="date-range">Sep 2019 — Aug 2021</div>
+                  </div>
+                  <div class="job-description">
+                    Leading operational DevOps and rapport with four contrasting
+                    teams in Stuff's Auckland office solo.
+                  </div>
+                  <ul class="achievements">
+                    <li>
+                      Ensure the highly available stuff.co.nz website serving
+                      over two million customers every day remains available and
+                      pristine
+                    </li>
+                    <li>
+                      Work remotely with the wider DevOps team, while working
+                      closely with developers in the Auckland office
+                    </li>
+                    <li>
+                      Build and maintain Stuff's critical legacy infrastructure
+                      in AWS using Docker, Puppet and Concourse
+                    </li>
+                    <li>
+                      Build and maintain Stuff's new infrastructure in GCP using
+                      Kubernetes, Jenkins and Terraform
+                    </li>
+                    <li>
+                      Configure and maintain a highly sophisticated CDN network
+                      using Akamai and Varnish caching
+                    </li>
+                    <li>
+                      Provide on-call support utilizing a NewRelic and ELK based
+                      monitoring stack over PagerDuty
+                    </li>
+                    <li>
+                      Work closely with and enable the New Product Development
+                      team in their trailblazing engineering journey
+                    </li>
+                  </ul>
                 </div>
 
-                            <div class="timeline-item">
-                                <div class="item-header">
-                                    <div class="item-info">
-                                        <div class="job-title">Software Engineer</div>
-                                        <div class="company">Gentrack Ltd. (Global)</div>
-                                    </div>
-                                    <div class="date-range">July 2017 — July 2018</div>
-                                </div>
-                    <div class="job-description">
-                        Building an enterprise-level Billing and CRM solution as part of an Agile cross-functional team for the Australian and Singapore electricity market.
+                <div class="timeline-item">
+                  <div class="item-header">
+                    <div class="item-info">
+                      <div class="job-title">DevOps Engineer</div>
+                      <div class="company">Gentrack Ltd. (Global)</div>
                     </div>
-                    <ul class="achievements">
-                        <li>Successfully deliver an enterprise market-ready solution in the Australian and Singapore electricity market in due time as part of a cross-functional team</li>
-                        <li>Work with an In-house legacy programming language inspired by IBM's UNIBASIC and UNI-data</li>
-                        <li>Develop an enterprise-level Java Spring Hibernate project that follows BDD for Billing and CRM</li>
-                        <li>Implement an SFTP interface in conjunction with existing Windows Component Services written in C#</li>
-                    </ul>
+                    <div class="date-range">Jul 2018 — Sep 2019</div>
+                  </div>
+                  <div class="job-description">
+                    Spreading DevOps as a culture in the company and be the key
+                    drivers of automation and security in the rapidly growing
+                    enterprise.
+                  </div>
+                  <ul class="achievements">
+                    <li>
+                      Break down locally-hosted monolithic programs into
+                      cloud-hosted micro-services with deployment automation
+                      using Terraform and best security practices
+                    </li>
+                    <li>
+                      Build a chief SaaS application to provision multiple CI
+                      pipelines for a product using Jenkins Job DSL, AWS Boto3
+                      and Terraform
+                    </li>
+                    <li>
+                      Guide and assist product teams into their journey of
+                      adopting DevOps as a culture
+                    </li>
+                    <li>
+                      Mentor and lead interns over 3 months, in producing a
+                      proof-of-concept SaaS application
+                    </li>
+                  </ul>
                 </div>
 
-                            <div class="timeline-item">
-                                <div class="item-header">
-                                    <div class="item-info">
-                                        <div class="job-title">DevOps Engineer</div>
-                                        <div class="company">Gentrack Ltd. (Global)</div>
-                                    </div>
-                                    <div class="date-range">Dec 2016 — Jul 2017</div>
-                                </div>
-                    <div class="job-description">
-                        Building an automated deployment and testing pipeline from scratch for a legacy enterprise-level Billing and CRM solution, and a Selenium testing framework.
+                <div class="timeline-item">
+                  <div class="item-header">
+                    <div class="item-info">
+                      <div class="job-title">Software Engineer</div>
+                      <div class="company">Gentrack Ltd. (Global)</div>
                     </div>
-                    <ul class="achievements">
-                        <li>Successfully build a CI pipeline using Python, AWS and Jenkins which serves as the primary benchmarking tool for all builds released into production</li>
-                        <li>Create a test harness extension to the CI pipeline for customizing automated performance tests written for JMeter</li>
-                    </ul>
+                    <div class="date-range">July 2017 — July 2018</div>
+                  </div>
+                  <div class="job-description">
+                    Building an enterprise-level Billing and CRM solution as
+                    part of an Agile cross-functional team for the Australian
+                    and Singapore electricity market.
+                  </div>
+                  <ul class="achievements">
+                    <li>
+                      Successfully deliver an enterprise market-ready solution
+                      in the Australian and Singapore electricity market in due
+                      time as part of a cross-functional team
+                    </li>
+                    <li>
+                      Work with an In-house legacy programming language inspired
+                      by IBM's UNIBASIC and UNI-data
+                    </li>
+                    <li>
+                      Develop an enterprise-level Java Spring Hibernate project
+                      that follows BDD for Billing and CRM
+                    </li>
+                    <li>
+                      Implement an SFTP interface in conjunction with existing
+                      Windows Component Services written in C#
+                    </li>
+                  </ul>
                 </div>
-            </div>
-        </section>
 
-                    <section id="education" class="education terminal-section education-section">
-                        <div class="section-header">$ uname -a</div>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="item-header">
-                                    <div class="item-info">
-                                        <div class="job-title">Bachelor's in Information and Communications Technology</div>
-                                        <div class="company">Manukau Institute of Technology, Auckland</div>
-                                    </div>
-                                    <div class="date-range">2014 — 2017</div>
-                                </div>
-                                <div class="job-description">
-                                    The Level 7 program had Software Development as my major stream.
-                                </div>
-                                <ul class="achievements">
-                                    <li>Awarded The 2017 Runner-Up Dean's Prize at the Faculty of Business and IT, MIT for industry project with Gentrack</li>
-                                    <li>Attained grade A+ in 11 out of 27 papers and a persistent A in the rest</li>
-                                </ul>
-                            </div>
+                <div class="timeline-item">
+                  <div class="item-header">
+                    <div class="item-info">
+                      <div class="job-title">DevOps Engineer</div>
+                      <div class="company">Gentrack Ltd. (Global)</div>
+                    </div>
+                    <div class="date-range">Dec 2016 — Jul 2017</div>
+                  </div>
+                  <div class="job-description">
+                    Building an automated deployment and testing pipeline from
+                    scratch for a legacy enterprise-level Billing and CRM
+                    solution, and a Selenium testing framework.
+                  </div>
+                  <ul class="achievements">
+                    <li>
+                      Successfully build a CI pipeline using Python, AWS and
+                      Jenkins which serves as the primary benchmarking tool for
+                      all builds released into production
+                    </li>
+                    <li>
+                      Create a test harness extension to the CI pipeline for
+                      customizing automated performance tests written for JMeter
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
 
-                            <div class="timeline-item">
-                                <div class="item-header">
-                                    <div class="item-info">
-                                        <div class="job-title">Senior High School Year 12</div>
-                                        <div class="company">Government Model Sr. Secondary School 35-D, Chandigarh</div>
-                                    </div>
-                                    <div class="date-range">2010 — 2012</div>
-                                </div>
-                                <div class="job-description">
-                                    Graduated with distinction in the Indian Central Board of Secondary Education. My majors were Physics, Chemistry and Mathematics. Minors being Computer Science and English.
-                                </div>
-                            </div>
-            </div>
-        </section>
+            <section
+              id="education"
+              class="education terminal-section education-section"
+            >
+              <div class="section-header">$ uname -a</div>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="item-header">
+                    <div class="item-info">
+                      <div class="job-title">
+                        Bachelor's in Information and Communications Technology
+                      </div>
+                      <div class="company">
+                        Manukau Institute of Technology, Auckland
+                      </div>
+                    </div>
+                    <div class="date-range">2014 — 2017</div>
+                  </div>
+                  <div class="job-description">
+                    The Level 7 program had Software Development as my major
+                    stream.
+                  </div>
+                  <ul class="achievements">
+                    <li>
+                      Awarded The 2017 Runner-Up Dean's Prize at the Faculty of
+                      Business and IT, MIT for industry project with Gentrack
+                    </li>
+                    <li>
+                      Attained grade A+ in 11 out of 27 papers and a persistent
+                      A in the rest
+                    </li>
+                  </ul>
+                </div>
 
-                    <section id="recommendations" class="recommendations terminal-section recommendations-section">
-                        <div class="section-header">$ grep -i praise</div>
-                        <div class="recommendation">
+                <div class="timeline-item">
+                  <div class="item-header">
+                    <div class="item-info">
+                      <div class="job-title">Senior High School Year 12</div>
+                      <div class="company">
+                        Government Model Sr. Secondary School 35-D, Chandigarh
+                      </div>
+                    </div>
+                    <div class="date-range">2010 — 2012</div>
+                  </div>
+                  <div class="job-description">
+                    Graduated with distinction in the Indian Central Board of
+                    Secondary Education. My majors were Physics, Chemistry and
+                    Mathematics. Minors being Computer Science and English.
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section
+              id="recommendations"
+              class="recommendations terminal-section recommendations-section"
+            >
+              <div class="section-header">$ grep -i praise</div>
+              <div class="recommendation">
                 <div class="recommendation-text">
-                    "I had the privilege of working with Paras during a critical period as we rebuilt and migrated our Kubernetes infrastructure. His technical expertise, thoughtful approach, and calm under pressure were pivotal in ensuring a smooth migration and set us up for seamless ongoing operations."
+                  "I had the privilege of working with Paras during a critical
+                  period as we rebuilt and migrated our Kubernetes
+                  infrastructure. His technical expertise, thoughtful approach,
+                  and calm under pressure were pivotal in ensuring a smooth
+                  migration and set us up for seamless ongoing operations."
                 </div>
                 <div class="recommender">Dion Short</div>
-                <div class="recommender-title">Chief Technical Officer at Aotal / SnapHire</div>
-            </div>
+                <div class="recommender-title">
+                  Chief Technical Officer at Aotal / SnapHire
+                </div>
+              </div>
 
-            <div class="recommendation">
+              <div class="recommendation">
                 <div class="recommendation-text">
-                    "Paras is a bright and enormously talented addition to any team. His calm and pleasant influence along with a willingness to help others was apparent during the time I worked with him on Stuff's product team. Paras has the ability to both focus on the details as well as maintain a high-level perspective of issues that can arise from certain technical choices. He is highly proficient in DevOps and has a knack for being able to translate complex technical issues into lay terms for non-technical stakeholders."
+                  "Paras is a bright and enormously talented addition to any
+                  team. His calm and pleasant influence along with a willingness
+                  to help others was apparent during the time I worked with him
+                  on Stuff's product team. Paras has the ability to both focus
+                  on the details as well as maintain a high-level perspective of
+                  issues that can arise from certain technical choices. He is
+                  highly proficient in DevOps and has a knack for being able to
+                  translate complex technical issues into lay terms for
+                  non-technical stakeholders."
                 </div>
                 <div class="recommender">Dr. Sumedh Kanade</div>
-                <div class="recommender-title">Senior Frontend Developer at Stuff</div>
-            </div>
+                <div class="recommender-title">
+                  Senior Frontend Developer at Stuff
+                </div>
+              </div>
 
-            <div class="recommendation">
+              <div class="recommendation">
                 <div class="recommendation-text">
-                    "I met Paras on the day he came in with a group of students from MIT to apply for one of our summer internship roles. He started as one of two interns in Product Development who worked together to build the 1st iteration of Gentrack's Cloud CI/CD pipeline in AWS. Paras stayed at Gentrack post university and progressed from Graduate Engineer to an Intermediate level role before pursuing new adventures at Stuff. He was always eager to learn new technologies (especially in the DevOps context) and is confident and able to share his opinions and views in a technical discussion."
+                  "I met Paras on the day he came in with a group of students
+                  from MIT to apply for one of our summer internship roles. He
+                  started as one of two interns in Product Development who
+                  worked together to build the 1st iteration of Gentrack's Cloud
+                  CI/CD pipeline in AWS. Paras stayed at Gentrack post
+                  university and progressed from Graduate Engineer to an
+                  Intermediate level role before pursuing new adventures at
+                  Stuff. He was always eager to learn new technologies
+                  (especially in the DevOps context) and is confident and able
+                  to share his opinions and views in a technical discussion."
                 </div>
                 <div class="recommender">Jan Behrens</div>
-                <div class="recommender-title">Chief Technology Officer at Gentrack</div>
-            </div>
-        </section>
-
-                    <footer class="site-footer">
-                        <div class="footer-content">
-                            Handcrafted with ❤️ from the Himalayas<br>
-                            Pure HTML + CSS | No Frameworks were harmed
-                        </div>
-                    </footer>
-
+                <div class="recommender-title">
+                  Chief Technology Officer at Gentrack
                 </div>
-            </div>
+              </div>
+            </section>
+
+            <footer class="site-footer">
+              <div class="footer-content">
+                Handcrafted with ❤️ from the Himalayas<br />
+                Pure HTML + CSS | No Frameworks were harmed
+              </div>
+            </footer>
+          </div>
         </div>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>

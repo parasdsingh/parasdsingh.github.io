@@ -90,6 +90,7 @@ body {
 
 .terminal-content {
     padding: 2rem 2rem 2rem;
+    padding-top: 10rem; /* Align section header with subtitle baseline */
 }
 
 .container {
@@ -310,6 +311,12 @@ body:not(:has(:target)) .nav-heading[href="#about"] {
     padding: 0 0 6rem 0;
     margin-bottom: 0;
 }
+
+/* Only About section aligns with subtitle when clicked */
+#about {
+    scroll-margin-top: 10rem;
+}
+
 
 .terminal-section::after {
     content: '';

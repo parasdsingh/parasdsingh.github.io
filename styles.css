@@ -162,6 +162,14 @@ body {
     height: 18px;
 }
 
+/* Print button styling - inherits all contact-link styles */
+.print-link {
+    background: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
 /* Terminal Theme Toggle */
 .theme-toggle-input {
     display: none;

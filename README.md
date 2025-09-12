@@ -1,13 +1,21 @@
 # Terminal CV
 
-A terminal-themed CV website for Parasdeep Singh, DevOps Engineer. Built with assistance from Claude Code.
+My resume reimagined as a concept I spent most of my time in - terminal :)
+I'm not a CSS expert, so credit goes to Claude Code for a lot of the heavy lifting.
 
-## Technology Stack
+## The Concept
 
-- Pure HTML and CSS
-- No JavaScript frameworks or dependencies
-- Responsive design with CSS Grid and Flexbox
-- Print-optimized styles
+I envisioned a digital resume which is
+- reminiscent of the command line
+- is contextually aware on desktop, mobile, and print
+- has a tiny footprint—pure HTML and CSS
+- no JavaScript
+
+## Usage
+
+Visit: https://parasdsingh.github.io/
+
+To print or save as PDF, use the print button or browser's print function.
 
 ## Features
 
@@ -16,12 +24,6 @@ A terminal-themed CV website for Parasdeep Singh, DevOps Engineer. Built with as
 - Mobile-responsive layout
 - A4-optimized printing with color detection
 - Pure CSS navigation using `:target` selectors
-
-## Usage
-
-Visit: https://parasdsingh.github.io/
-
-To print or save as PDF, use the print button or browser's print function.
 
 ## Development
 
@@ -45,11 +47,5 @@ npx prettier --write index.html styles.css
 # CSS validation
 npx stylelint styles.css
 ```
-
-**Validation Status:**
-- HTML: Valid HTML5 with proper semantics (HTMLHint)
-- CSS: CSS3 with custom properties and grid layout (StyleLint) 
-- Formatting: Prettier-formatted for consistency
-- Accessibility: Proper ARIA labels and semantic markup
 
 Built with vanilla web technologies for maximum compatibility and performance.

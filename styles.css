@@ -1,67 +1,67 @@
 :root {
-  --bg-primary: #000000;
-  --bg-secondary: #111111;
-  --text-primary: #ffffff;
-  --text-secondary: #aaaaaa;
+  --bg-primary: #000;
+  --bg-secondary: #111;
+  --text-primary: #fff;
+  --text-secondary: #aaa;
   --accent-primary: #20b2aa;
   --accent-secondary: #55c5bd;
   --accent-tertiary: #66b8b0;
-  --accent-quaternary: #559999;
-  --border: #333333;
+  --accent-quaternary: #599;
+  --border: #333;
 }
 
 /* Light theme - apply to body and all elements */
 .theme-toggle-input:not(:checked) ~ .app-layout {
-  --bg-primary: #ffffff;
+  --bg-primary: #fff;
   --bg-secondary: #f5f5f5;
-  --text-primary: #000000;
-  --text-secondary: #666666;
+  --text-primary: #000;
+  --text-secondary: #666;
   --accent-primary: #20b2aa;
   --accent-secondary: #55c5bd;
   --accent-tertiary: #66b8b0;
-  --accent-quaternary: #559999;
-  --border: #cccccc;
+  --accent-quaternary: #599;
+  --border: #ccc;
 }
 
 .theme-toggle-input:not(:checked) ~ .app-layout * {
-  --bg-primary: #ffffff;
+  --bg-primary: #fff;
   --bg-secondary: #f5f5f5;
-  --text-primary: #000000;
-  --text-secondary: #666666;
-  --border: #cccccc;
+  --text-primary: #000;
+  --text-secondary: #666;
+  --border: #ccc;
 }
 
 /* Apply light theme to all elements when input is unchecked */
 .theme-toggle-input:not(:checked) ~ *,
 .theme-toggle-input:not(:checked) {
-  --bg-primary: #ffffff;
+  --bg-primary: #fff;
   --bg-secondary: #f5f5f5;
-  --text-primary: #000000;
-  --text-secondary: #666666;
+  --text-primary: #000;
+  --text-secondary: #666;
   --accent-primary: #20b2aa;
   --accent-secondary: #55c5bd;
   --accent-tertiary: #66b8b0;
-  --accent-quaternary: #559999;
-  --border: #cccccc;
+  --accent-quaternary: #599;
+  --border: #ccc;
 }
 
 /* Apply light theme to html and body when input is not checked */
 body:has(.theme-toggle-input:not(:checked)) {
-  --bg-primary: #ffffff;
+  --bg-primary: #fff;
   --bg-secondary: #f5f5f5;
-  --text-primary: #000000;
-  --text-secondary: #666666;
+  --text-primary: #000;
+  --text-secondary: #666;
   --accent-primary: #20b2aa;
   --accent-secondary: #55c5bd;
   --accent-tertiary: #66b8b0;
-  --accent-quaternary: #559999;
-  --border: #cccccc;
-  background: #ffffff !important;
+  --accent-quaternary: #599;
+  --border: #ccc;
+  background: #fff !important;
 }
 
 html:has(.theme-toggle-input:not(:checked)) {
-  --bg-primary: #ffffff;
-  background: #ffffff !important;
+  --bg-primary: #fff;
+  background: #fff !important;
 }
 
 * {
@@ -227,16 +227,16 @@ body {
 
 /* Dark mode button (default - checkbox checked) */
 .theme-toggle-input:checked + .theme-toggle-label {
-  background: #111111;
-  color: #aaaaaa;
-  border: 1px solid #333333;
+  background: #111;
+  color: #aaa;
+  border: 1px solid #333;
 }
 
 /* Light mode button (checkbox unchecked) */
 .theme-toggle-input:not(:checked) + .theme-toggle-label {
   background: #f5f5f5;
-  color: #666666;
-  border: 1px solid #cccccc;
+  color: #666;
+  border: 1px solid #ccc;
 }
 
 .theme-toggle-label:hover {
@@ -848,15 +848,15 @@ h2 {
 
   /* Tablet button states */
   .theme-toggle-input:checked + .theme-toggle-label {
-    background: #111111;
-    color: #aaaaaa;
-    border: 1px solid #333333;
+    background: #111;
+    color: #aaa;
+    border: 1px solid #333;
   }
 
   .theme-toggle-input:not(:checked) + .theme-toggle-label {
     background: #f5f5f5;
-    color: #666666;
-    border: 1px solid #cccccc;
+    color: #666;
+    border: 1px solid #ccc;
   }
 
   .theme-toggle-label:hover {
@@ -985,28 +985,28 @@ h2 {
 
   /* Mobile button states */
   .theme-toggle-input:checked + .theme-toggle-label {
-    background: #111111;
-    color: #aaaaaa;
-    border: 1px solid #333333;
+    background: #111;
+    color: #aaa;
+    border: 1px solid #333;
   }
 
   .theme-toggle-input:not(:checked) + .theme-toggle-label {
     background: #f5f5f5;
-    color: #666666;
-    border: 1px solid #cccccc;
+    color: #666;
+    border: 1px solid #ccc;
   }
 
   /* Mobile tap feedback - brief flash only */
   .theme-toggle-label:active {
     background: #20b2aa !important;
-    color: #ffffff !important;
+    color: #fff !important;
     transform: scale(0.95);
     box-shadow: 0 2px 8px rgba(32, 178, 170, 0.3);
     transition: none;
   }
 
   .theme-toggle-label:active .theme-icon {
-    color: #ffffff !important;
+    color: #fff !important;
   }
 
   .theme-icon {
@@ -1350,9 +1350,6 @@ h2 {
   .section-header {
     page-break-after: avoid;
     page-break-inside: avoid;
-  }
-
-  .section-header {
     page-break-before: auto;
     margin-top: 20pt; /* Extra space when section starts new page */
   }

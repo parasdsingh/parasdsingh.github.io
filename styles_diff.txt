@@ -1,0 +1,327 @@
+diff --git a/styles.css b/styles.css
+index fc5f444..b154664 100644
+--- a/styles.css
++++ b/styles.css
+@@ -1,67 +1,34 @@
+ :root {
+-  --bg-primary: #000;
+-  --bg-secondary: #111;
+-  --text-primary: #fff;
+-  --text-secondary: #aaa;
++  --bg-primary: #000000;
++  --bg-secondary: #111111;
++  --text-primary: #ffffff;
++  --text-secondary: #aaaaaa;
+   --accent-primary: #20b2aa;
+   --accent-secondary: #55c5bd;
+   --accent-tertiary: #66b8b0;
+-  --accent-quaternary: #599;
+-  --border: #333;
++  --accent-quaternary: #559999;
++  --border: #333333;
+ }
+ 
+ /* Light theme - apply to body and all elements */
+ .theme-toggle-input:not(:checked) ~ .app-layout {
+-  --bg-primary: #fff;
++  --bg-primary: #ffffff;
+   --bg-secondary: #f5f5f5;
+-  --text-primary: #000;
+-  --text-secondary: #666;
++  --text-primary: #000000;
++  --text-secondary: #666666;
+   --accent-primary: #20b2aa;
+   --accent-secondary: #55c5bd;
+   --accent-tertiary: #66b8b0;
+-  --accent-quaternary: #599;
+-  --border: #ccc;
++  --accent-quaternary: #559999;
++  --border: #cccccc;
+ }
+ 
+ .theme-toggle-input:not(:checked) ~ .app-layout * {
+-  --bg-primary: #fff;
++  --bg-primary: #ffffff;
+   --bg-secondary: #f5f5f5;
+-  --text-primary: #000;
+-  --text-secondary: #666;
+-  --border: #ccc;
+-}
+-
+-/* Apply light theme to all elements when input is unchecked */
+-.theme-toggle-input:not(:checked) ~ *,
+-.theme-toggle-input:not(:checked) {
+-  --bg-primary: #fff;
+-  --bg-secondary: #f5f5f5;
+-  --text-primary: #000;
+-  --text-secondary: #666;
+-  --accent-primary: #20b2aa;
+-  --accent-secondary: #55c5bd;
+-  --accent-tertiary: #66b8b0;
+-  --accent-quaternary: #599;
+-  --border: #ccc;
+-}
+-
+-/* Apply light theme to html and body when input is not checked */
+-body:has(.theme-toggle-input:not(:checked)) {
+-  --bg-primary: #fff;
+-  --bg-secondary: #f5f5f5;
+-  --text-primary: #000;
+-  --text-secondary: #666;
+-  --accent-primary: #20b2aa;
+-  --accent-secondary: #55c5bd;
+-  --accent-tertiary: #66b8b0;
+-  --accent-quaternary: #599;
+-  --border: #ccc;
+-  background: #fff !important;
+-}
+-
+-html:has(.theme-toggle-input:not(:checked)) {
+-  --bg-primary: #fff;
+-  background: #fff !important;
++  --text-primary: #000000;
++  --text-secondary: #666666;
++  --border: #cccccc;
+ }
+ 
+ * {
+@@ -72,7 +39,6 @@ html:has(.theme-toggle-input:not(:checked)) {
+ 
+ html {
+   scroll-behavior: smooth;
+-  background: var(--bg-primary);
+ }
+ 
+ body {
+@@ -118,13 +84,112 @@ body {
+ 
+ .terminal-window {
+   margin: 0;
+-  background: var(--bg-primary);
++  background: transparent;
++  position: relative;
+ }
+ 
+ .terminal-content {
+   padding: 2rem 2rem 2rem;
+   padding-top: 10rem; /* Align section header with subtitle baseline */
+-  background: var(--bg-primary);
++}
++
++/* Desktop: Account for iTerm top bar and bottom border */
++@media (min-width: 1025px) {
++  .terminal-content {
++    padding-top: 13.8rem; /* 10rem baseline + 1rem gap + 2.8rem iTerm bar */
++    padding-bottom: 2rem; /* Reduced since footer is now outside */
++  }
++
++  /* Position footer outside iTerm frame */
++  .site-footer {
++    position: fixed;
++    bottom: 2rem;
++    left: 50%;
++    right: 2rem; /* Add right margin matching design system */
++    background: transparent; /* Remove black background */
++    z-index: 10;
++    padding: 1rem 2rem 1rem 0; /* Remove left padding since it starts at 50%, add right padding */
++  }
++
++  /* Clip content to stay within iTerm frame */
++  .right-pane {
++    overflow: hidden;
++    position: relative;
++  }
++
++  .terminal-window {
++    position: fixed;
++    top: 8rem; /* iTerm content area starts below smaller title bar (6rem + 2rem) */
++    left: 50%;
++    right: 0;
++    bottom: 9rem; /* Move higher to avoid footer collision */
++    overflow: hidden;
++    padding: 0; /* Remove all padding */
++    margin: 0;
++    background: transparent;
++  }
++
++  .terminal-content {
++    height: 100%;
++    overflow-y: auto;
++    padding-top: 0; /* No top padding - headers stick to frame top */
++    padding-bottom: 0; /* No bottom padding - content flows to frame bottom */
++    padding-left: 2rem;
++    padding-right: 2rem;
++    position: relative; /* Create positioning context for sticky headers */
++    scroll-behavior: smooth; /* Enable smooth scrolling inside terminal */
++  }
++}
++
++/* iTerm-style terminal frame for desktop */
++@media (min-width: 1025px) {
++  .terminal-window::before {
++    content: "";
++    position: fixed;
++    top: 6rem; /* Theme toggle (2rem) + gap (2rem) + toggle height (2rem) */
++    left: 50%;
++    right: -2rem; /* Extend right border outside viewport */
++    bottom: 9rem; /* Moved higher to clear footer completely */
++    border: 1px solid #555555;
++    pointer-events: none;
++    z-index: 1;
++    border-radius: 8px;
++  }
++
++  /* iTerm top bar with macOS styling */
++  .terminal-window::after {
++    content: "";
++    position: fixed;
++    top: 6rem;
++    left: 50%;
++    right: -2rem;
++    height: 2rem; /* Reduced from 2.8rem to save space */
++    background: linear-gradient(180deg, #e8e8e8 0%, #d1d1d1 50%, #c4c4c4 100%);
++    border-bottom: 1px solid #aaa;
++    pointer-events: none;
++    z-index: 200; /* Above sticky headers */
++    border-radius: 8px 8px 0 0;
++  }
++
++  /* macOS traffic light buttons */
++  .right-pane::before {
++    content: "";
++    position: fixed;
++    top: 6.7rem; /* Adjusted for smaller bar height */
++    left: calc(50% + 0.6rem);
++    width: 10px; /* Smaller buttons */
++    height: 10px;
++    background: #ff5f56;
++    border-radius: 50%;
++    pointer-events: none;
++    z-index: 300; /* Above iTerm bar */
++    box-shadow:
++      18px 0 0 #ffbd2e,
++      /* Closer spacing */ 36px 0 0 #27ca3f,
++      0 0 0 0.5px rgba(0, 0, 0, 0.1),
++      18px 0 0 0.5px rgba(0, 0, 0, 0.1),
++      36px 0 0 0.5px rgba(0, 0, 0, 0.1);
++  }
+ }
+ 
+ .container {
+@@ -227,16 +292,16 @@ body {
+ 
+ /* Dark mode button (default - checkbox checked) */
+ .theme-toggle-input:checked + .theme-toggle-label {
+-  background: #111;
+-  color: #aaa;
+-  border: 1px solid #333;
++  background: #111111;
++  color: #aaaaaa;
++  border: 1px solid #333333;
+ }
+ 
+ /* Light mode button (checkbox unchecked) */
+ .theme-toggle-input:not(:checked) + .theme-toggle-label {
+   background: #f5f5f5;
+-  color: #666;
+-  border: 1px solid #ccc;
++  color: #666666;
++  border: 1px solid #cccccc;
+ }
+ 
+ .theme-toggle-label:hover {
+@@ -377,7 +442,7 @@ body:not(:has(:target)) .nav-heading[href="#about"] {
+   position: sticky;
+   top: -1px;
+   z-index: 100;
+-  padding: 1rem 0;
++  padding: 0.5rem 0; /* Reduced from 1rem for thinner background */
+   margin-top: -1rem;
+ }
+ 
+@@ -394,6 +459,18 @@ body:not(:has(:target)) .nav-heading[href="#about"] {
+   user-select: none;
+ }
+ 
++/* Desktop: Sticky headers stick to iTerm frame top and don't overlap left border */
++@media (min-width: 1025px) {
++  .section-header {
++    top: 0.25rem; /* Tiny gap from terminal window top */
++  }
++
++  .section-header::before {
++    left: 0; /* Don't extend beyond content area to avoid overlapping iTerm left border */
++    right: -2rem;
++  }
++}
++
+ h2 {
+   font-family: "JetBrains Mono", monospace;
+   font-size: 1.5rem;
+@@ -848,15 +925,15 @@ h2 {
+ 
+   /* Tablet button states */
+   .theme-toggle-input:checked + .theme-toggle-label {
+-    background: #111;
+-    color: #aaa;
+-    border: 1px solid #333;
++    background: #111111;
++    color: #aaaaaa;
++    border: 1px solid #333333;
+   }
+ 
+   .theme-toggle-input:not(:checked) + .theme-toggle-label {
+     background: #f5f5f5;
+-    color: #666;
+-    border: 1px solid #ccc;
++    color: #666666;
++    border: 1px solid #cccccc;
+   }
+ 
+   .theme-toggle-label:hover {
+@@ -985,28 +1062,28 @@ h2 {
+ 
+   /* Mobile button states */
+   .theme-toggle-input:checked + .theme-toggle-label {
+-    background: #111;
+-    color: #aaa;
+-    border: 1px solid #333;
++    background: #111111;
++    color: #aaaaaa;
++    border: 1px solid #333333;
+   }
+ 
+   .theme-toggle-input:not(:checked) + .theme-toggle-label {
+     background: #f5f5f5;
+-    color: #666;
+-    border: 1px solid #ccc;
++    color: #666666;
++    border: 1px solid #cccccc;
+   }
+ 
+   /* Mobile tap feedback - brief flash only */
+   .theme-toggle-label:active {
+     background: #20b2aa !important;
+-    color: #fff !important;
++    color: #ffffff !important;
+     transform: scale(0.95);
+     box-shadow: 0 2px 8px rgba(32, 178, 170, 0.3);
+     transition: none;
+   }
+ 
+   .theme-toggle-label:active .theme-icon {
+-    color: #fff !important;
++    color: #ffffff !important;
+   }
+ 
+   .theme-icon {
+@@ -1350,6 +1427,9 @@ h2 {
+   .section-header {
+     page-break-after: avoid;
+     page-break-inside: avoid;
++  }
++
++  .section-header {
+     page-break-before: auto;
+     margin-top: 20pt; /* Extra space when section starts new page */
+   }

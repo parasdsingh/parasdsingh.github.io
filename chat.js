@@ -7,6 +7,7 @@ class CVChatAssistant {
     this.isLoading = false;
     
     this.initializeEventListeners();
+    this.updateSendButtonState(); // Initialize send button state
     this.loadChatHistory();
   }
 
@@ -21,9 +22,10 @@ class CVChatAssistant {
       }
     });
     
-    // Auto-resize textarea as user types
+    // Auto-resize textarea as user types and update send button state
     this.chatInput.addEventListener('input', () => {
       this.autoResizeTextarea();
+      this.updateSendButtonState();
     });
     
   }
@@ -31,6 +33,11 @@ class CVChatAssistant {
   autoResizeTextarea() {
     this.chatInput.style.height = 'auto';
     this.chatInput.style.height = Math.min(this.chatInput.scrollHeight, 80) + 'px'; // Max 4em
+  }
+
+  updateSendButtonState() {
+    const hasText = this.chatInput.value.trim().length > 0;
+    this.sendButton.disabled = !hasText || this.isLoading;
   }
 
   scrollToBottom() {
@@ -209,7 +216,7 @@ Recommendations: ${sections.recommendations}
 
   setLoading(loading) {
     this.isLoading = loading;
-    this.sendButton.disabled = loading;
+    this.updateSendButtonState();
     
     if (loading) {
       const loadingDiv = document.createElement('div');
@@ -246,7 +253,7 @@ Recommendations: ${sections.recommendations}
     localStorage.setItem('cvChatHistory', JSON.stringify(messages));
     
     // Also save conversation visibility state
-    const isVisible = window.location.hash === '#ask-ai';
+    const isVisible = window.location.hash === '#conversationSection';
     localStorage.setItem('cvChatVisible', JSON.stringify(isVisible));
   }
 
@@ -256,8 +263,8 @@ Recommendations: ${sections.recommendations}
       const isVisible = JSON.parse(localStorage.getItem('cvChatVisible') || 'false');
       
       if (history.length > 0) {
-        if (isVisible && window.location.hash !== '#ask-ai') {
-          window.location.hash = '#ask-ai';
+        if (isVisible && window.location.hash !== '#conversationSection') {
+          window.location.hash = '#conversationSection';
         }
         history.forEach(msg => this.addMessage(msg.type, msg.content));
       }

@@ -404,7 +404,7 @@ body {
 }
 
 /* Special styling for Ask AI nav item */
-.nav-heading[href="#ask-ai"] {
+.nav-heading[href="#conversationSection"] {
   text-decoration: underline !important;
   text-decoration-color: var(--accent-primary);
   text-underline-offset: 0.2rem;
@@ -416,7 +416,7 @@ body {
 #experience:target ~ * .left-nav a[href="#experience"],
 #education:target ~ * .left-nav a[href="#education"],
 #recommendations:target ~ * .left-nav a[href="#recommendations"],
-#ask-ai:target ~ * .left-nav a[href="#ask-ai"],
+#conversationSection:target ~ * .left-nav a[href="#conversationSection"],
 body:not(:has(:target)) .left-nav a[href="#about"] {
   color: var(--accent-primary) !important;
   font-weight: 700;
@@ -428,7 +428,7 @@ body:has(#tech-stack:target) .left-nav a[href="#tech-stack"],
 body:has(#experience:target) .left-nav a[href="#experience"],
 body:has(#education:target) .left-nav a[href="#education"],
 body:has(#recommendations:target) .left-nav a[href="#recommendations"],
-body:has(#ask-ai:target) .left-nav a[href="#ask-ai"] {
+body:has(#conversationSection:target) .left-nav a[href="#conversationSection"] {
   color: var(--accent-primary) !important;
   font-weight: 700;
 }
@@ -1506,8 +1506,8 @@ h2 {
   display: none; /* Hidden by default */
 }
 
-/* Show conversation section when Ask AI is targeted */
-#ask-ai:target ~ * .conversation-section {
+/* Show conversation section when directly targeted */
+#conversationSection:target {
   display: block !important;
 }
 

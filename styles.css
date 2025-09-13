@@ -93,7 +93,7 @@ body {
 .left-pane {
   width: 50%;
   background: var(--bg-primary);
-  padding: 3rem 4rem 3rem 4rem;
+  padding: 3rem 4rem 1rem 4rem; /* Reduced bottom padding for footer */
   position: fixed;
   height: 100vh;
   overflow: hidden;
@@ -403,12 +403,20 @@ body {
   font-size: 0.8rem;
 }
 
+/* Special styling for Ask AI nav item */
+.nav-heading[href="#ask-ai"] {
+  text-decoration: underline !important;
+  text-decoration-color: var(--accent-primary);
+  text-underline-offset: 0.2rem;
+}
+
 /* Target-based navigation highlighting */
 #about:target ~ * .left-nav a[href="#about"],
 #tech-stack:target ~ * .left-nav a[href="#tech-stack"],
 #experience:target ~ * .left-nav a[href="#experience"],
 #education:target ~ * .left-nav a[href="#education"],
 #recommendations:target ~ * .left-nav a[href="#recommendations"],
+#ask-ai:target ~ * .left-nav a[href="#ask-ai"],
 body:not(:has(:target)) .left-nav a[href="#about"] {
   color: var(--accent-primary) !important;
   font-weight: 700;
@@ -419,7 +427,8 @@ body:has(#about:target) .left-nav a[href="#about"],
 body:has(#tech-stack:target) .left-nav a[href="#tech-stack"],
 body:has(#experience:target) .left-nav a[href="#experience"],
 body:has(#education:target) .left-nav a[href="#education"],
-body:has(#recommendations:target) .left-nav a[href="#recommendations"] {
+body:has(#recommendations:target) .left-nav a[href="#recommendations"],
+body:has(#ask-ai:target) .left-nav a[href="#ask-ai"] {
   color: var(--accent-primary) !important;
   font-weight: 700;
 }
@@ -501,6 +510,12 @@ body:not(:has(:target)) .nav-heading[href="#about"] {
   .section-header::before {
     left: 0; /* Don't extend beyond content area to avoid overlapping iTerm left border */
     right: -2rem;
+  }
+  
+  /* Ensure conversation messages have enough space when sticky */
+  .conversation-section .conversation-messages {
+    padding-top: 5rem; /* Extra space to account for sticky header */
+    padding-bottom: 2rem; /* Minimal bottom padding for desktop too */
   }
 }
 
@@ -1479,5 +1494,328 @@ h2 {
     --print-secondary: #333;
     --print-accent: #20b2aa; /* Our beautiful cyan accent */
     --print-muted: #666;
+  }
+}
+
+/* iTerm Chat Integration Styles */
+
+/* Conversation section within terminal content */
+.conversation-section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: none; /* Hidden by default */
+}
+
+/* Show conversation section when Ask AI is targeted */
+#ask-ai:target ~ * .conversation-section {
+  display: block !important;
+}
+
+.conversation-messages {
+  font-family: "JetBrains Mono", monospace;
+  padding-top: 4rem; /* Space below sticky header */
+  padding-bottom: 2rem; /* Minimal bottom padding - let individual bubbles handle spacing */
+}
+
+/* Message bubble styling */
+.conversation-message {
+  margin-bottom: 1.5rem;
+  display: flex;
+  width: 100%;
+}
+
+/* Last message bubble positioning */
+.conversation-messages > .conversation-message:last-child {
+  margin-bottom: 6rem; /* Space between bubble bottom and chat controls */
+}
+
+@media (min-width: 1025px) {
+  .conversation-messages > .conversation-message:last-child {
+    margin-bottom: 7rem; /* Slightly more space on desktop */
+  }
+}
+
+.conversation-message.user-message {
+  justify-content: flex-end; /* Right align user messages */
+}
+
+.conversation-message.assistant-message {
+  justify-content: flex-start; /* Left align AI messages */
+}
+
+.message-bubble {
+  max-width: 75%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  word-wrap: break-word;
+  position: relative;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.conversation-message.user-message .message-bubble {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border: 1px solid var(--accent-primary);
+  border-bottom-right-radius: 4px; /* Terminal-style sharp corner */
+}
+
+.conversation-message.assistant-message .message-bubble {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 4px; /* Terminal-style sharp corner */
+  line-height: 1.7; /* Match job description style */
+}
+
+/* Legacy support - will be updated in JS */
+.message-content {
+  font-size: 0.9rem;
+  word-wrap: break-word;
+}
+
+/* Fixed chat input at iTerm bottom */
+.iterm-chat-input {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  z-index: 50;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.chat-intro {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.chat-intro-text {
+  color: var(--accent-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.chat-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chat-prompt {
+  color: var(--accent-tertiary);
+  font-weight: 600;
+  font-size: 0.9rem; /* Match section content font size */
+  white-space: nowrap;
+}
+
+.chat-input {
+  flex: 1;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem; /* Match section content font size */
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+  overflow-y: auto;
+  min-height: 1.2em;
+  max-height: 4em;
+}
+
+.chat-input:focus {
+  border-color: var(--accent-primary);
+}
+
+.chat-input::placeholder {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.chat-send-button {
+  background: var(--accent-primary);
+  border: none;
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  min-width: 32px;
+  height: 32px;
+}
+
+.chat-send-button:hover {
+  background: var(--accent-secondary);
+  transform: translateY(-1px);
+}
+
+.chat-send-button:active {
+  transform: translateY(0);
+}
+
+.chat-send-button:disabled {
+  background: var(--text-secondary);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Processing animation */
+.chat-loading {
+  display: none;
+  color: var(--accent-secondary);
+  font-style: italic;
+}
+
+.chat-loading.active {
+  display: block;
+}
+
+.processing-dots {
+  display: inline-block;
+}
+
+.processing-dots::after {
+  content: '';
+  animation: processing 1.5s infinite;
+}
+
+@keyframes processing {
+  0%, 20% {
+    content: '';
+  }
+  40% {
+    content: '.';
+  }
+  60% {
+    content: '..';
+  }
+  80%, 100% {
+    content: '...';
+  }
+}
+
+/* Terminal-style processing animation */
+.terminal-processing {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: "JetBrains Mono", monospace;
+  color: var(--accent-secondary);
+}
+
+/* Option 4: Classic Terminal Spinner - CSS Animation */
+.terminal-spinner {
+  display: inline-block;
+  font-size: 1rem;
+  font-family: "JetBrains Mono", monospace;
+  color: var(--accent-secondary);
+}
+
+.terminal-spinner::before {
+  content: '⠋';
+  animation: classic-spinner 1.2s linear infinite;
+  display: inline-block;
+  width: 1ch; /* Square width equal to character height */
+  text-align: center; /* Center the character within the square */
+  font-style: normal !important; /* Force normal style to prevent italic Braille rendering */
+  font-weight: normal; /* Ensure normal weight */
+}
+
+@keyframes classic-spinner {
+  0% { content: '⠋'; }
+  10% { content: '⠙'; }
+  20% { content: '⠹'; }
+  30% { content: '⠸'; }
+  40% { content: '⠼'; }
+  50% { content: '⠴'; }
+  60% { content: '⠦'; }
+  70% { content: '⠧'; }
+  80% { content: '⠇'; }
+  90% { content: '⠏'; }
+  100% { content: '⠋'; }
+}
+
+/* Processing text */
+.terminal-processing-text {
+  margin-left: 0.5rem;
+  font-style: normal; /* Remove italics */
+  opacity: 0.8;
+}
+
+
+/* Desktop: Adjust terminal and input positioning */
+@media (min-width: 1025px) {
+  .iterm-chat-input {
+    /* Position chat input within iTerm frame at bottom */
+    bottom: 5rem; /* Extend down to match footer bottom */
+    border: 1px solid #555555; /* Complete iTerm border including bottom */
+    background: var(--bg-primary);
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners to match iTerm */
+    z-index: 150; /* Below iTerm bar but above content */
+    right: 0; /* Align with iTerm frame right border */
+  }
+
+  /* Adjust terminal window bottom to make room for chat input */
+  .terminal-window {
+    bottom: 8rem; /* Increased to make room for chat input */
+  }
+
+  /* Update iTerm frame border to exclude bottom */
+  .terminal-window::before {
+    bottom: 8rem; /* Match terminal window */
+    border-bottom: none; /* Remove bottom border since chat input provides it */
+    border-radius: 8px 8px 0 0; /* Remove bottom border radius */
+    right: 0; /* Show right border to align with chat controls */
+  }
+
+  /* Ensure terminal content doesn't go behind chat input */
+  .terminal-content {
+    padding-bottom: 6rem; /* Increased space above chat input to prevent message coverage */
+  }
+}
+
+/* Hide chat input in print */
+@media print {
+  .iterm-chat-input {
+    display: none;
+  }
+  
+  .conversation-section {
+    display: none;
+  }
+}
+
+/* Left pane footer */
+.left-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.left-footer .footer-content {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Mobile: Show chat input at bottom of screen */
+@media (max-width: 1024px) {
+  .iterm-chat-input {
+    left: 0;
+    padding: 0.5rem;
+  }
+  
+  .chat-input {
+    font-size: 16px; /* Prevent zoom on iOS */
   }
 }

@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="chat.js" defer></script>
   </head>
   <body>
     <!-- Terminal Theme Toggle -->
@@ -95,6 +96,9 @@
           </div>
           <div class="nav-section">
             <a href="#recommendations" class="nav-heading">Recommendations</a>
+          </div>
+          <div class="nav-section">
+            <a href="#ask-ai" class="nav-heading">Ask AI</a>
           </div>
         </nav>
 
@@ -212,6 +216,13 @@
             </svg>
           </button>
         </div>
+
+        <footer class="left-footer">
+          <div class="footer-content">
+            Handcrafted with ❤️ from the Himalayas<br />
+            Pure HTML + CSS | No Frameworks were harmed
+          </div>
+        </footer>
       </div>
 
       <!-- Scrollable Right Pane -->
@@ -721,12 +732,39 @@
               </div>
             </section>
 
-            <footer class="site-footer">
-              <div class="footer-content">
-                Handcrafted with ❤️ from the Himalayas<br />
-                Pure HTML + CSS | No Frameworks were harmed
-              </div>
-            </footer>
+            <!-- Conversation section (initially hidden) -->
+            <section id="conversationSection" class="conversation-section terminal-section">
+              <div class="section-header">$ ai --interactive</div>
+              <div id="conversationMessages" class="conversation-messages"></div>
+            </section>
+          </div>
+        </div>
+        
+        <!-- Fixed chat input at iTerm bottom -->
+        <div id="ask-ai" class="iterm-chat-input">
+          <div class="chat-input-wrapper">
+            <textarea
+              id="chatInput"
+              class="chat-input"
+              placeholder="Ask AI about Paras"
+              autocomplete="off"
+              rows="1"
+            ></textarea>
+            <button id="sendButton" class="chat-send-button" type="button">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+              </svg>
+            </button>
           </div>
         </div>
       </div>

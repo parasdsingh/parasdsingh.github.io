@@ -32,6 +32,22 @@ Static site deployable to any web server. Main files:
 - `index.html` - CV content and structure
 - `styles.css` - All styling and responsive behavior
 
+### Checking the print layout
+
+The print stylesheet is a different layout from the screen one, and pagination
+bugs are invisible on screen. Render the real PDF instead of guessing:
+
+```bash
+./print-preview.sh              # renders, reports page count, opens it
+./print-preview.sh out.pdf      # render to a given path
+NO_OPEN=1 ./print-preview.sh    # render only
+```
+
+Two print gotchas already hit, worth remembering: Chrome does not fragment
+flex containers across pages, so any screen-side `display: flex` container
+holding page-spanning content needs `display: block` in `@media print`; and a
+flex `gap` will quietly override the print margins meant to space those items.
+
 ### Code Quality & Validation
 
 The codebase is validated using standard tools:

@@ -1193,7 +1193,7 @@ h2 {
 
   /* Section spacing */
   .terminal-section {
-    margin-bottom: 20pt;
+    margin-bottom: 14pt;
     padding: 0;
     page-break-inside: auto;
   }
@@ -1382,7 +1382,7 @@ h2 {
   :root {
     --print-primary: #000;
     --print-secondary: #333;
-    --print-accent: #2563eb; /* Radiant royal blue: ~5.2:1 on white */
+    --print-accent: #1e40af; /* Deep cobalt, between navy and royal: ~8.7:1 on white */
     --print-muted: #666;
   }
 }

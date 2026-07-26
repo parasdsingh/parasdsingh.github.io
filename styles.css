@@ -1378,7 +1378,7 @@ h2 {
   :root {
     --print-primary: #000;
     --print-secondary: #333;
-    --print-accent: #20b2aa; /* Our beautiful cyan accent */
+    --print-accent: #0f766e; /* Deep teal: site hue, inked down to AA contrast */
     --print-muted: #666;
   }
 }

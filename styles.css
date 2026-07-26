@@ -1381,7 +1381,7 @@ h2 {
   :root {
     --print-primary: #000;
     --print-secondary: #333;
-    --print-accent: #1e40af; /* Deep cobalt, between navy and royal: ~8.7:1 on white */
+    --print-accent: #2563eb; /* Royal blue: 5.2:1 on white */
     --print-muted: #666;
   }
 }

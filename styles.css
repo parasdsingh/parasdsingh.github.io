@@ -1101,13 +1101,13 @@ h2 {
     display: none !important;
   }
 
-  /* Typography for print */
+  /* Typography for print: Inter for the document, mono only in the skill chips */
   body {
     font-size: 10pt;
     line-height: 1.4;
     color: var(--print-primary);
     background: white !important;
-    font-family: "Source Code Pro", "Consolas", "Monaco", monospace;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   }
 
   /* Force white background for all print elements */
@@ -1237,6 +1237,7 @@ h2 {
     font-size: 9pt;
     page-break-inside: avoid;
     border: 0.5pt solid var(--print-accent);
+    font-family: "JetBrains Mono", "Source Code Pro", monospace;
   }
 
   .ls-item .tool-name {
@@ -1304,6 +1305,7 @@ h2 {
     flex-shrink: 0;
     text-align: right;
     white-space: nowrap !important;
+    font-variant-numeric: tabular-nums;
   }
 
   .job-description {

@@ -1264,7 +1264,8 @@ h2 {
   .timeline-item {
     margin-bottom: 12pt;
     padding: 0;
-    page-break-inside: avoid;
+    /* Long entries may flow across pages; headers and bullets are protected below */
+    page-break-inside: auto;
     border: none;
     background: transparent;
   }
@@ -1323,6 +1324,7 @@ h2 {
     color: var(--print-secondary);
     margin-bottom: 2pt;
     line-height: 1.3;
+    page-break-inside: avoid;
   }
 
   /* Recommendations */
@@ -1357,9 +1359,13 @@ h2 {
 
   /* Page break control - refined strategy */
   .profile-header,
-  .timeline-item,
   .recommendation {
     page-break-inside: avoid;
+  }
+
+  /* A break may not separate an entry's header or description from its first bullet */
+  .job-description {
+    page-break-after: avoid;
   }
 
   .item-header,
@@ -1376,7 +1382,7 @@ h2 {
   :root {
     --print-primary: #000;
     --print-secondary: #333;
-    --print-accent: #1f3a5f; /* Ink navy: ~11.5:1 on white */
+    --print-accent: #2563eb; /* Radiant royal blue: ~5.2:1 on white */
     --print-muted: #666;
   }
 }

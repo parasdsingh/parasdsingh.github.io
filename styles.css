@@ -1259,6 +1259,11 @@ h2 {
   /* Timeline items */
   .timeline {
     margin-left: 0;
+    /* On screen this is a column flex container with a 2.5rem gap. Chrome does not
+       fragment flex containers across printed pages, so the whole timeline was moved
+       to page 2 as a single block. Block layout lets entries break between pages, and
+       drops the flex gap in favour of .timeline-item's own margin. */
+    display: block;
   }
 
   .timeline-item {

@@ -1219,6 +1219,7 @@ h2 {
     font-size: 10pt;
     color: var(--print-secondary);
     line-height: 1.4;
+    max-width: 100%;
   }
 
   /* Technical skills */

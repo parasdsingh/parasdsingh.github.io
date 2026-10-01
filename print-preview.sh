@@ -6,6 +6,7 @@
 #   ./print-preview.sh                  # render, report pages, open it
 #   ./print-preview.sh out.pdf          # render to a specific path
 #   NO_OPEN=1 ./print-preview.sh        # render without opening
+#   SRC=other.html ./print-preview.sh   # render another page (default index.html)
 #
 # Debugging pagination: append a block like this to a *copy* of styles.css and
 # render that copy, to see which box owns a gap.
@@ -20,6 +21,12 @@ set -euo pipefail
 
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 out="${1:-${TMPDIR:-/tmp}/cv-print.pdf}"
+src="$(cd "$(dirname "${SRC:-$here/index.html}")" && pwd)/$(basename "${SRC:-$here/index.html}")"
+
+if [ ! -f "$src" ]; then
+  echo "No such page: $src" >&2
+  exit 1
+fi
 
 chrome=""
 for candidate in \
@@ -46,7 +53,7 @@ fi
   --no-pdf-header-footer \
   --virtual-time-budget=8000 \
   --print-to-pdf="$out" \
-  "file://$here/index.html" 2>/dev/null
+  "file://$src" 2>/dev/null
 
 pages=$(python3 -c "
 import re, sys

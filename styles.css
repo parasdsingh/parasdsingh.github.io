@@ -1181,6 +1181,9 @@ h2 {
   #recommendations .section-header::after {
     content: "Recommendations";
   }
+  #interests .section-header::after {
+    content: "Interests";
+  }
 
   .section-header {
     font-size: 0; /* Hide original command text */

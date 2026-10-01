@@ -1,12 +1,55 @@
+/*
+ * CV accent scale. Each CV variant picks one with <html data-accent="...">
+ * so variants can be told apart at a glance; the live site uses the default.
+ * --accent-light: light theme and print (4.5:1 or better on white).
+ * --accent-dark: dark theme (4.5:1 or better on black).
+ */
+:root {
+  --accent-light: #2563eb; /* royal */
+  --accent-dark: #60a5fa;
+}
+
+:root[data-accent="teal"] {
+  --accent-light: #0e7490;
+  --accent-dark: #20b2aa;
+}
+
+:root[data-accent="ocean"] {
+  --accent-light: #0369a1;
+  --accent-dark: #38bdf8;
+}
+
+:root[data-accent="indigo"] {
+  --accent-light: #4f46e5;
+  --accent-dark: #818cf8;
+}
+
+:root[data-accent="navy"] {
+  --accent-light: #1e40af;
+  --accent-dark: #bfdbfe;
+}
+
+:root[data-accent="slate"] {
+  --accent-light: #4b5563;
+  --accent-dark: #9ca3af;
+}
+
 :root {
   --bg-primary: #000;
   --bg-secondary: #111;
   --text-primary: #fff;
   --text-secondary: #aaa;
-  --accent-primary: #20b2aa;
-  --accent-secondary: #55c5bd;
-  --accent-tertiary: #66b8b0;
-  --accent-quaternary: #599;
+  --accent-primary: var(--accent-dark);
+  --accent-secondary: color-mix(
+    in srgb,
+    var(--accent-primary) 75%,
+    var(--text-primary)
+  );
+  --accent-tertiary: color-mix(
+    in srgb,
+    var(--accent-primary) 70%,
+    var(--text-secondary)
+  );
   --border: #333;
 }
 
@@ -16,10 +59,17 @@
   --bg-secondary: #f5f5f5;
   --text-primary: #000;
   --text-secondary: #666;
-  --accent-primary: #20b2aa;
-  --accent-secondary: #55c5bd;
-  --accent-tertiary: #66b8b0;
-  --accent-quaternary: #599;
+  --accent-primary: var(--accent-light);
+  --accent-secondary: color-mix(
+    in srgb,
+    var(--accent-primary) 75%,
+    var(--text-primary)
+  );
+  --accent-tertiary: color-mix(
+    in srgb,
+    var(--accent-primary) 70%,
+    var(--text-secondary)
+  );
   --border: #ccc;
 }
 
@@ -38,10 +88,17 @@
   --bg-secondary: #f5f5f5;
   --text-primary: #000;
   --text-secondary: #666;
-  --accent-primary: #20b2aa;
-  --accent-secondary: #55c5bd;
-  --accent-tertiary: #66b8b0;
-  --accent-quaternary: #599;
+  --accent-primary: var(--accent-light);
+  --accent-secondary: color-mix(
+    in srgb,
+    var(--accent-primary) 75%,
+    var(--text-primary)
+  );
+  --accent-tertiary: color-mix(
+    in srgb,
+    var(--accent-primary) 70%,
+    var(--text-secondary)
+  );
   --border: #ccc;
 }
 
@@ -51,10 +108,17 @@ body:has(.theme-toggle-input:not(:checked)) {
   --bg-secondary: #f5f5f5;
   --text-primary: #000;
   --text-secondary: #666;
-  --accent-primary: #20b2aa;
-  --accent-secondary: #55c5bd;
-  --accent-tertiary: #66b8b0;
-  --accent-quaternary: #599;
+  --accent-primary: var(--accent-light);
+  --accent-secondary: color-mix(
+    in srgb,
+    var(--accent-primary) 75%,
+    var(--text-primary)
+  );
+  --accent-tertiary: color-mix(
+    in srgb,
+    var(--accent-primary) 70%,
+    var(--text-secondary)
+  );
   --border: #ccc;
   background: #fff !important;
 }
@@ -188,7 +252,8 @@ body {
   color: var(--accent-primary);
   border-color: var(--accent-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--accent-primary) 20%, transparent);
 }
 
 .contact-link svg {
@@ -244,7 +309,8 @@ body {
   color: var(--bg-primary) !important;
   border-color: var(--accent-primary) !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--accent-primary) 20%, transparent);
 }
 
 .theme-toggle-label:hover .theme-icon {
@@ -458,7 +524,7 @@ h2 {
 }
 
 .ls-item:hover {
-  background: rgba(85, 153, 153, 0.1);
+  background: color-mix(in srgb, var(--accent-primary) 10%, transparent);
   color: var(--text-primary);
   transform: translateX(4px);
 }
@@ -862,7 +928,8 @@ h2 {
     background: var(--accent-primary) !important;
     color: var(--bg-primary) !important;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(32, 178, 170, 0.2);
+    box-shadow: 0 4px 12px
+      color-mix(in srgb, var(--accent-primary) 20%, transparent);
   }
 
   .theme-toggle-label:hover .theme-icon {
@@ -997,10 +1064,11 @@ h2 {
 
   /* Mobile tap feedback - brief flash only */
   .theme-toggle-label:active {
-    background: #20b2aa !important;
+    background: var(--accent-primary) !important;
     color: #fff !important;
     transform: scale(0.95);
-    box-shadow: 0 2px 8px rgba(32, 178, 170, 0.3);
+    box-shadow: 0 2px 8px
+      color-mix(in srgb, var(--accent-primary) 30%, transparent);
     transition: none;
   }
 
@@ -1385,7 +1453,7 @@ h2 {
   :root {
     --print-primary: #000;
     --print-secondary: #333;
-    --print-accent: #2563eb; /* Royal blue: 5.2:1 on white */
+    --print-accent: var(--accent-light);
     --print-muted: #666;
   }
 }

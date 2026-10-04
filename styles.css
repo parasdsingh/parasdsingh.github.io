@@ -10,8 +10,8 @@
 }
 
 :root[data-accent="teal"] {
-  --accent-light: #0e7490;
-  --accent-dark: #20b2aa;
+  --accent-light: #00838f;
+  --accent-dark: #00e0c6;
 }
 
 :root[data-accent="ocean"] {
